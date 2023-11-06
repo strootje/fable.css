@@ -1,0 +1,36 @@
+.slider {
+	width: inherit;
+	height: inherit;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+
+	& > li {
+		flex-shrink: 0;
+		width: inherit;
+		scroll-snap-align: center;
+		scroll-snap-stop: always;
+		position: relative;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center top;
+		}
+
+		& a {
+			position: absolute;
+			top: calc(50% - 1.5rem);
+			font-size: 3rem;
+
+			&:first-of-type {
+				left: 10%;
+			}
+
+			&:last-of-type {
+				right: 10%;
+			}
+		}
+	}
+}

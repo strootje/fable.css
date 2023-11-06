@@ -1,0 +1,13 @@
+.sr-only {
+	/* TODO: improve.. */
+	display: none;
+}
+
+.focus-only:not(:focus) {
+	/* TODO: improve.. */
+	display: none;
+}
+
+.u-hidden {
+	display: none;
+}

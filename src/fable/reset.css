@@ -1,0 +1,48 @@
+/* 
+ * inspired by, see:
+ * https://elad2412.github.io/the-new-css-reset/
+**/
+
+html {
+	font-size: 16px;
+	line-height: 1.5;
+	box-sizing: border-box;
+}
+
+:is(html, body) {
+	min-height: 100%;
+}
+
+:is(*, *::before, *::after) {
+	line-height: inherit;
+	box-sizing: inherit;
+	font-size: inherit;
+}
+
+:is(body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol) {
+	margin: 0;
+	padding: 0;
+}
+
+:is(img, picture, video, canvas, svg) {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+
+:is(input, button, textarea, select) {
+	font: inherit;
+}
+
+/* prettier-ignore */
+h1 { font-size: 2em; }
+/* prettier-ignore */
+h2 { font-size: 1.5em; }
+/* prettier-ignore */
+h3 { font-size: 1.17em; }
+/* prettier-ignore */
+h4 { font-size: 1em; }
+/* prettier-ignore */
+h5 { font-size: 0.83em; }
+/* prettier-ignore */
+h6 { font-size: 0.67em; }

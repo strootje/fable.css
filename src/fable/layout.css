@@ -1,0 +1,46 @@
+:is(.level, .stack) {
+	display: flex;
+
+	&.stack {
+		flex-direction: column;
+	}
+
+	&:is(ol, ul, menu) {
+		list-style-type: none;
+		padding: 0;
+	}
+
+	&:not(.u-nowrap) {
+		flex-wrap: wrap;
+	}
+
+	&:not(.u-nogap) {
+		gap: var(--gap, 1rem);
+	}
+
+	& > .u-grow,
+	&.u-grow-all > * {
+		flex-grow: 1;
+	}
+
+	& > .u-shrink,
+	&.u-shrink-all > * {
+		flex-shrink: 1;
+	}
+
+	&.u-center {
+		justify-content: center;
+	}
+
+	&.u-between {
+		justify-content: space-between;
+	}
+
+	&.u-around {
+		justify-content: space-around;
+	}
+
+	&.u-middle {
+		align-items: center;
+	}
+}
