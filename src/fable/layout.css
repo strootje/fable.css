@@ -10,11 +10,11 @@
 		padding: 0;
 	}
 
-	&:not(.u-nowrap) {
+	&:not(.u-no-wrap) {
 		flex-wrap: wrap;
 	}
 
-	&:not(.u-nogap) {
+	&:not(.u-no-gap) {
 		gap: var(--gap, 1rem);
 	}
 
