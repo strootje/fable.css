@@ -11,11 +11,11 @@
 		padding: 0;
 	}
 
-	:is(.level, .stack):not(.u-nowrap) {
+	:is(.level, .stack):not(.u-no-wrap) {
 		flex-wrap: wrap;
 	}
 
-	:is(.level, .stack):not(.u-nogap) {
+	:is(.level, .stack):not(.u-no-gap) {
 		gap: var(--gap, 1rem);
 	}
 
@@ -63,6 +63,7 @@ html {
 	font-size: 16px;
 	line-height: 1.5;
 	box-sizing: border-box;
+	height: 100%;
 }
 :is(html, body) {
 	min-height: 100%;
