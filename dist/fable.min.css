@@ -1,1 +1,239 @@
-:is(.level,.stack){display:flex}:is(.level,.stack).stack{flex-direction:column}:is(.level,.stack):is(ol,ul,menu){list-style-type:none;padding:0}:is(.level,.stack):not(.u-no-wrap){flex-wrap:wrap}:is(.level,.stack):not(.u-no-gap){gap:var(--gap,1rem)}:is(.level,.stack).u-grow-all>*,:is(.level,.stack)>.u-grow{flex-grow:1}:is(.level,.stack).u-shrink-all>*,:is(.level,.stack)>.u-shrink{flex-shrink:1}:is(.level,.stack).u-center{justify-content:center}:is(.level,.stack).u-between{justify-content:space-between}:is(.level,.stack).u-around{justify-content:space-around}:is(.level,.stack).u-middle{align-items:center}.focus-only:not(:focus),.sr-only,.u-hidden{display:none}html{box-sizing:border-box;font-size:16px;height:100%;line-height:1.5}:is(html,body){min-height:100%}:is(*,:before,:after){box-sizing:inherit;font-size:inherit;line-height:inherit}:is(body,h1,h2,h3,h4,h5,h6,p,figure,ul,ol){margin:0;padding:0}:is(img,picture,video,canvas,svg){display:block;height:auto;max-width:100%}:is(input,button,textarea,select){font:inherit}h1{font-size:2em}h2{font-size:1.5em}h3{font-size:1.17em}h4{font-size:1em}h5{font-size:.83em}h6{font-size:.67em}
+/* 
+ * inspired by, see:
+ * https://elad2412.github.io/the-new-css-reset/
+**/
+
+html {
+	font-size: 16px;
+	line-height: 1.6;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+:is(html, body) {
+	min-height: 100%;
+}
+
+:is(*, *::before, *::after) {
+	line-height: inherit;
+	box-sizing: inherit;
+	font-size: inherit;
+}
+
+:is(body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol) {
+	margin: 0;
+	padding: 0;
+}
+
+:is(img, picture, video, canvas, svg) {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+
+:is(input, button, textarea, select) {
+	font: inherit;
+}
+
+:root {
+	--pt-sm: calc(var(--pt-md) / 2);
+	--pt-md: calc(var(--base, 8px) * 1);
+	--pt-lg: calc(var(--pt-md) * 2);
+	--pt-xl: calc(var(--pt-md) * 3);
+}
+
+:is(.level, .stack) {
+	display: flex;
+}
+
+:is(.level, .stack):is(menu, ol, ul) {
+		list-style: none;
+		padding: unset;
+	}
+
+:is(.level, .stack).stack:not(.reverse) {
+		flex-direction: column;
+	}
+
+:is(.level, .stack).reverse.level {
+		flex-direction: row-reverse;
+	}
+
+:is(.level, .stack).reverse.stack {
+		flex-direction: column-reverse;
+	}
+
+:is(.level, .stack).wrap {
+		flex-wrap: wrap;
+	}
+
+:is(.level, .stack):not(.gap-auto):is(.level.left, .stack.top) {
+		justify-content: start;
+	}
+
+:is(.level, .stack):not(.gap-auto):is(.center):not(.level:is(.left, .right), .stack:is(.top, .bottom)) {
+		justify-content: center;
+	}
+
+:is(.level, .stack):not(.gap-auto):is(.level.right, .stack.bottom) {
+		justify-content: end;
+	}
+
+:is(.level, .stack):is(.level.top, .stack.left) {
+		align-items: start;
+	}
+
+:is(.level, .stack):is(.center):not(.level:is(.top, .bottom), .stack:is(.left, .right)) {
+		align-items: center;
+	}
+
+:is(.level, .stack):is(.level.bottom, .stack.right) {
+		align-items: end;
+	}
+
+:is(.level, .stack).level > .pin-top,
+	:is(.level, .stack).stack > .pin-left {
+		align-self: start;
+	}
+
+:is(.level, .stack) > .pin-center {
+		align-self: center;
+	}
+
+:is(.level, .stack) > .stretch {
+		align-self: stretch;
+	}
+
+:is(.level, .stack).level > .pin-bottom,
+	:is(.level, .stack).stack > .pin-right {
+		align-self: end;
+	}
+
+:is(.level, .stack).gap-sm {
+			gap: var(--pt-sm);
+		}
+
+:is(.level, .stack).gap-md {
+			gap: var(--pt-md);
+		}
+
+:is(.level, .stack).gap-lg {
+			gap: var(--pt-lg);
+		}
+
+:is(.level, .stack).gap-xl {
+			gap: var(--pt-xl);
+		}
+
+:is(.level, .stack).gap-auto {
+		justify-content: space-between;
+	}
+
+:is(.level, .stack).grow-all > *,
+	:is(.level, .stack) > .grow {
+		flex-grow: 1;
+	}
+
+.margin-sm {
+		margin: var(--pt-sm);
+	}
+
+.margin-md {
+		margin: var(--pt-md);
+	}
+
+.margin-lg {
+		margin: var(--pt-lg);
+	}
+
+.margin-xl {
+		margin: var(--pt-xl);
+	}
+
+.padding-sm {
+		padding: var(--pt-sm);
+	}
+
+.padding-md {
+		padding: var(--pt-md);
+	}
+
+.padding-lg {
+		padding: var(--pt-lg);
+	}
+
+.padding-xl {
+		padding: var(--pt-xl);
+	}
+
+.radius-sm {
+		border-radius: var(--pt-sm);
+		overflow: hidden;
+	}
+
+.radius-md {
+		border-radius: var(--pt-md);
+		overflow: hidden;
+	}
+
+.radius-lg {
+		border-radius: var(--pt-lg);
+		overflow: hidden;
+	}
+
+.radius-xl {
+		border-radius: var(--pt-xl);
+		overflow: hidden;
+	}
+
+:is(h1:not(.is-2, .is-3, .is-4, .is-5, .is-6), .is-1) {
+	font-size: calc(1rem * pow(1.2, 6));
+	/* font-size: 2.986rem; */
+}
+
+:is(h2:not(.is-1, .is-3, .is-4, .is-5, .is-6), .is-2) {
+	font-size: calc(1rem * pow(1.2, 5));
+	/* font-size: 2.489rem; */
+}
+
+:is(h3:not(.is-1, .is-2, .is-4, .is-5, .is-6), .is-3) {
+	font-size: calc(1rem * pow(1.2, 4));
+	/* font-size: 2.074rem; */
+}
+
+:is(h4:not(.is-1, .is-2, .is-3, .is-5, .is-6), .is-4) {
+	font-size: calc(1rem * pow(1.2, 3));
+	/* font-size: 1.728rem; */
+}
+
+:is(h5:not(.is-1, .is-2, .is-3, .is-4, .is-6), .is-5) {
+	font-size: calc(1rem * pow(1.2, 2));
+	/* font-size: 1.44rem; */
+}
+
+:is(h6:not(.is-1, .is-2, .is-3, .is-4, .is-5), .is-6) {
+	font-size: calc(1rem * pow(1.2, 1));
+	/* font-size: 1.2rem; */
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.wires :is(.level, .stack) {
+	box-shadow: inset 0 0 1px black;
+}
+
+.sr-only {
+	/* TODO: improve.. */
+	display: none;
+}
+
+.focus-only:not(:focus) {
+	/* TODO: improve.. */
+	display: none;
+}
+
+.u-hidden {
+	display: none;
+}

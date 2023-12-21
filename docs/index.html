@@ -3,173 +3,179 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Fable.Css</title>
 		<link rel="stylesheet" href="../dist/fable.min.css" />
 		<link rel="stylesheet" href="../dist/fable-comps.min.css" />
 		<style>
-			#files .panel {
-				max-width: 380px;
+			body > :not(.hero) {
+				width: 1140px;
 			}
-			#files .panel:first-child {
+
+			.pill {
 				background-color: red;
 			}
-			#files .panel:last-child {
-				background-color: green;
-			}
 		</style>
+		<title>Fable.Css</title>
 	</head>
-	<body class="stack">
-		<header class="stack u-center u-middle">
-			<h1>fable.css</h1>
-			<ul class="level">
-				<li>Minimalist</li>
-				<li>Flexbox</li>
-				<li>Pure CSS</li>
-				<li>Modern</li>
-				<li>Opinionated</li>
-				<li>Tweakable</li>
-				<li>Responsive</li>
+
+	<body class="stack gap-xl center">
+		<header class="stack gap-lg center">
+			<h1>Fable.Css</h1>
+			<ul class="level wrap gap-md center" style="width: 320px">
+				<li class="pill padding-md radius-sm">Minimalist</li>
+				<li class="pill padding-md radius-sm">Flexbox</li>
+				<li class="pill padding-md radius-sm">Pure CSS</li>
+				<li class="pill padding-md radius-sm">Modern</li>
+				<li class="pill padding-md radius-sm">Opinionated</li>
+				<li class="pill padding-md radius-sm">Tweakable</li>
+				<li class="pill padding-md radius-sm">Responsive</li>
 			</ul>
 		</header>
 
-		<main class="stack">
-			<section class="stack">
-				<header class="level u-center">
-					<h2>flipper</h2>
-				</header>
+		<main class="level gap-lg grow">
+			<aside>
+				<nav>
+					<ul class="stack gap-md">
+						<li><a href="#flipper">Flipper</a></li>
+						<li><a href="#slider">Slider</a></li>
+						<li><a href="#marquee">Marquee</a></li>
+					</ul>
+				</nav>
+			</aside>
 
-				<section class="stack u-middle" id="files">
-					<ul class="level u-grow-all">
+			<div class="stack">
+				<section class="stack">
+					<header class="level center">
+						<h2 id="flipper">flipper</h2>
+					</header>
+
+					<section class="stack center" id="files">
+						<ul class="level u-grow-all">
+							<li>
+								<label>
+									<input class="u-hidden" type="checkbox" />
+									<div class="flipper">
+										<span class="panel">front</span>
+										<span class="panel">back</span>
+									</div>
+								</label>
+							</li>
+
+							<li>
+								<label>
+									<input class="u-hidden" type="checkbox" />
+									<div class="flipper">
+										<span class="panel">front</span>
+										<span class="panel">back</span>
+									</div>
+								</label>
+							</li>
+						</ul>
+					</section>
+				</section>
+
+				<section class="stack">
+					<header class="stack center">
+						<h2 id="slider">slider</h2>
+					</header>
+
+					<ul class="level u-nowrap center">
 						<li>
-							<label>
-								<input class="u-hidden" type="checkbox" />
-								<div class="flipper">
-									<span class="panel">front</span>
-									<span class="panel">back</span>
-								</div>
-							</label>
+							<ul class="slider level u-nowrap u-nogap" style="width: 230px; position: relative">
+								<li id="slide-1-1">
+									<a href="#slide-1-3">&lt;</a>
+									<img src="https://picsum.photos/231" />
+									<a href="#slide-1-2">&gt;</a>
+								</li>
+								<li id="slide-1-2">
+									<a href="#slide-1-1">&lt;</a>
+									<img src="https://picsum.photos/232" />
+									<a href="#slide-1-3">&gt;</a>
+								</li>
+								<li id="slide-1-3">
+									<a href="#slide-1-2">&lt;</a>
+									<img src="https://picsum.photos/233" />
+									<a href="#slide-1-1">&gt;</a>
+								</li>
+							</ul>
 						</li>
-
 						<li>
-							<label>
-								<input class="u-hidden" type="checkbox" />
-								<div class="flipper">
-									<span class="panel">front</span>
-									<span class="panel">back</span>
-								</div>
-							</label>
+							<ul class="slider level u-nowrap u-nogap" style="width: 230px">
+								<li id="slide-2-1">
+									<a href="#slide-2-3">&lt;</a>
+									<img src="https://picsum.photos/231" />
+									<a href="#slide-2-2">&gt;</a>
+								</li>
+								<li id="slide-2-2">
+									<a href="#slide-2-1">&lt;</a>
+									<img src="https://picsum.photos/232" />
+									<a href="#slide-2-3">&gt;</a>
+								</li>
+								<li id="slide-2-3">
+									<a href="#slide-2-2">&lt;</a>
+									<img src="https://picsum.photos/233" />
+									<a href="#slide-2-1">&gt;</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="slider level u-nowrap u-nogap" style="width: 230px">
+								<li id="slide-3-1">
+									<a href="#slide-3-3">&lt;</a>
+									<img src="https://picsum.photos/231" />
+									<a href="#slide-3-2">&gt;</a>
+								</li>
+								<li id="slide-3-2">
+									<a href="#slide-3-1">&lt;</a>
+									<img src="https://picsum.photos/232" />
+									<a href="#slide-3-3">&gt;</a>
+								</li>
+								<li id="slide-3-3">
+									<a href="#slide-3-2">&lt;</a>
+									<img src="https://picsum.photos/233" />
+									<a href="#slide-3-1">&gt;</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
-			</section>
 
-			<section class="stack">
-				<header class="stack u-middle">
-					<h2>slider</h2>
-				</header>
+				<section class="stack">
+					<header class="stack center">
+						<h2 id="marquee">marquee</h2>
+					</header>
 
-				<ul class="level u-nowrap u-center">
-					<li>
-						<ul class="slider level u-nowrap u-nogap" style="width: 230px; position: relative">
-							<li id="slide-1-1">
-								<a href="#slide-1-3">&lt;</a>
-								<img src="https://picsum.photos/231" />
-								<a href="#slide-1-2">&gt;</a>
-							</li>
-							<li id="slide-1-2">
-								<a href="#slide-1-1">&lt;</a>
-								<img src="https://picsum.photos/232" />
-								<a href="#slide-1-3">&gt;</a>
-							</li>
-							<li id="slide-1-3">
-								<a href="#slide-1-2">&lt;</a>
-								<img src="https://picsum.photos/233" />
-								<a href="#slide-1-1">&gt;</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<ul class="slider level u-nowrap u-nogap" style="width: 230px">
-							<li id="slide-2-1">
-								<a href="#slide-2-3">&lt;</a>
-								<img src="https://picsum.photos/231" />
-								<a href="#slide-2-2">&gt;</a>
-							</li>
-							<li id="slide-2-2">
-								<a href="#slide-2-1">&lt;</a>
-								<img src="https://picsum.photos/232" />
-								<a href="#slide-2-3">&gt;</a>
-							</li>
-							<li id="slide-2-3">
-								<a href="#slide-2-2">&lt;</a>
-								<img src="https://picsum.photos/233" />
-								<a href="#slide-2-1">&gt;</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<ul class="slider level u-nowrap u-nogap" style="width: 230px">
-							<li id="slide-3-1">
-								<a href="#slide-3-3">&lt;</a>
-								<img src="https://picsum.photos/231" />
-								<a href="#slide-3-2">&gt;</a>
-							</li>
-							<li id="slide-3-2">
-								<a href="#slide-3-1">&lt;</a>
-								<img src="https://picsum.photos/232" />
-								<a href="#slide-3-3">&gt;</a>
-							</li>
-							<li id="slide-3-3">
-								<a href="#slide-3-2">&lt;</a>
-								<img src="https://picsum.photos/233" />
-								<a href="#slide-3-1">&gt;</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</section>
-
-			<section class="stack">
-				<header class="stack u-middle">
-					<h2>marquee</h2>
-				</header>
-
-				<aside class="stack u-middle">
-					<div class="marquee level u-nowrap" style="width: 50vw">
-						<ul class="level">
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-						</ul>
-						<ul class="level">
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-							<li><img src="https://picsum.photos/230" /></li>
-						</ul>
-					</div>
-				</aside>
-			</section>
-
-			<div class="level u-center">
-				<p>test1</p>
-				<p>test2</p>
+					<aside class="stack center">
+						<div class="marquee level gap-md" style="width: 50vw">
+							<ul class="level gap-md">
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+							</ul>
+							<ul class="level gap-md">
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+								<li><img src="https://picsum.photos/230" /></li>
+							</ul>
+						</div>
+					</aside>
+				</section>
 			</div>
 		</main>
 
-		<footer class="level">
-			<span>footer item</span>
-			<span>footer item</span>
-			<span>footer item</span>
+		<footer class="level grow-all">
+			<span class="txt-center">footer item</span>
+			<span class="txt-center">footer item</span>
+			<span class="txt-center">footer item</span>
 		</footer>
 	</body>
 </html>

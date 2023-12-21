@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../dist/fable.min.css" />
+		<title>Document</title>
+
+		<style>
+			body {
+				align-items: center;
+			}
+			body > * {
+				width: 960px;
+			}
+
+			body > :not(:first-child) {
+				background-color: yellowgreen;
+				height: 400px;
+			}
+			body > :not(:first-child) > * {
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body class="stack gap-lg">
+		<nav class="stack">
+			<ul class="level grow-all">
+				<li class="stack"><a href="#" class="padding-md txt-center">Behandelingen</a></li>
+				<li class="stack"><a href="#" class="padding-md txt-center">Reviews</a></li>
+				<li class="stack"><a href="#" class="padding-md txt-center">Contact</a></li>
+				<li class="stack"><a href="#" class="padding-md txt-center btn">Maak Afspraak</a></li>
+			</ul>
+		</nav>
+
+		<p class="level gap-xl padding-xl center">
+			<span class="padding-lg radius-sm">test1</span>
+			<span class="padding-lg radius-sm">test2</span>
+			<span class="padding-lg radius-sm">test3</span>
+		</p>
+
+		<p class="stack gap-xl padding-xl">
+			<span class="padding-lg radius-sm">test1</span>
+			<span class="padding-lg radius-sm">test2</span>
+			<span class="padding-lg radius-sm">test3</span>
+		</p>
+	</body>
+</html>

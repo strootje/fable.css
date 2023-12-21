@@ -9,5 +9,7 @@ clean:
 install:
 	npm install
 build:
-	ENV=${ENV} npx postcss src/fable/_base.css --map -o ./dist/fable.min.css
-	ENV=${ENV} npx postcss src/comps/_all.css --map -o ./dist/fable-comps.min.css
+	ENV="${ENV}" npx postcss src/fable/_base.css --map -o ./dist/fable.min.css
+	ENV="${ENV}" npx postcss src/comps/_all.css --map -o ./dist/fable-comps.min.css
+watch:
+	ENV="${ENV}" npx postcss --watch src/fable/_base.css --map -o ./dist/fable.min.css

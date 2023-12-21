@@ -5,7 +5,7 @@
 
 html {
 	font-size: 16px;
-	line-height: 1.5;
+	line-height: 1.6;
 	box-sizing: border-box;
 	height: 100%;
 }
@@ -34,16 +34,3 @@ html {
 :is(input, button, textarea, select) {
 	font: inherit;
 }
-
-/* prettier-ignore */
-h1 { font-size: 2em; }
-/* prettier-ignore */
-h2 { font-size: 1.5em; }
-/* prettier-ignore */
-h3 { font-size: 1.17em; }
-/* prettier-ignore */
-h4 { font-size: 1em; }
-/* prettier-ignore */
-h5 { font-size: 0.83em; }
-/* prettier-ignore */
-h6 { font-size: 0.67em; }
