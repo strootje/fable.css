@@ -77,26 +77,57 @@
 }
 
 @each $s in $sizes {
-	.margin-$s {
-		margin: var(--pt-$s);
+	:is(.margin-$s, .margin-$(s)-hor, .margin-$(s)-left) {
+		margin-left: var(--pt-$s);
+	}
+	:is(.margin-$s, .margin-$(s)-hor, .margin-$(s)-right) {
+		margin-right: var(--pt-$s);
+	}
+	:is(.margin-$s, .margin-$(s)-ver, .margin-$(s)-top) {
+		margin-top: var(--pt-$s);
+	}
+	:is(.margin-$s, .margin-$(s)-ver, .margin-$(s)-bottom) {
+		margin-bottom: var(--pt-$s);
 	}
 }
 
 @each $s in $sizes {
-	.padding-$s {
-		padding: var(--pt-$s);
+	:is(.padding-$s, .padding-$(s)-hor, .padding-$(s)-left) {
+		padding-left: var(--pt-$s);
+	}
+	:is(.padding-$s, .padding-$(s)-hor, .padding-$(s)-right) {
+		padding-right: var(--pt-$s);
+	}
+	:is(.padding-$s, .padding-$(s)-ver, .padding-$(s)-top) {
+		padding-top: var(--pt-$s);
+	}
+	:is(.padding-$s, .padding-$(s)-ver, .padding-$(s)-bottom) {
+		padding-bottom: var(--pt-$s);
 	}
 }
 
 @each $s in $sizes {
-	.radius-$s {
-		border-radius: var(--pt-$s);
+	:is(.radius-$s, .radius-$(s)-left, .radius-$(s)-right, .radius-$(s)-top, .radius-$(s)-bottom),
+	:is(.radius-$(s)-top-left, .radius-$(s)-top-right, .radius-$(s)-bottom-left, .radius-$(s)-bottom-right) {
 		overflow: hidden;
+	}
+
+	:is(.radius-$s, .radius-$(s)-left, .radius-$(s)-top, .radius-$(s)-top-left) {
+		border-top-left-radius: var(--pt-$s);
+	}
+	:is(.radius-$s, .radius-$(s)-right, .radius-$(s)-top, .radius-$(s)-top-right) {
+		border-top-right-radius: var(--pt-$s);
+	}
+	:is(.radius-$s, .radius-$(s)-left, .radius-$(s)-bottom, .radius-$(s)-bottom-left) {
+		border-bottom-left-radius: var(--pt-$s);
+	}
+	:is(.radius-$s, .radius-$(s)-right, .radius-$(s)-bottom, .radius-$(s)-bottom-right) {
+		border-bottom-right-radius: var(--pt-$s);
 	}
 }
 
 :is(h1:not(.is-2, .is-3, .is-4, .is-5, .is-6), .is-1) {
-	font-size: calc(1rem * pow($fontScale, 6));
+	font-size: calc(1rem * pow($fontScale, 6) * 1vw);
 	/* font-size: 2.986rem; */
 }
 :is(h2:not(.is-1, .is-3, .is-4, .is-5, .is-6), .is-2) {

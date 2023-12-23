@@ -20,9 +20,9 @@ html {
 	font-size: inherit;
 }
 
-:is(body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol) {
-	margin: 0;
-	padding: 0;
+:is(body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol, blockquote) {
+	padding: unset;
+	margin: unset;
 }
 
 :is(img, picture, video, canvas, svg) {
