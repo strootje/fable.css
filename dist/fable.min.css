@@ -347,7 +347,7 @@ html {
 	}
 
 :is(h1:not(.is-2, .is-3, .is-4, .is-5, .is-6), .is-1) {
-	font-size: calc(1rem * pow(1.2, 6));
+	font-size: calc(1rem * pow(1.2, 6) * 1vw);
 	/* font-size: 2.986rem; */
 }
 
