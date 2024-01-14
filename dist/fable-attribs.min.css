@@ -1,0 +1,263 @@
+.no-border {
+	border: 0;
+}
+:is(.float-left, .float-right) {
+	position: relative;
+}
+:is(.float-left, .float-right).float-left {
+		float: left;
+	}
+:is(.float-left, .float-right).float-right {
+		float: right;
+	}
+.no-margin {
+	margin: 0;
+}
+:is(.margin-sm, .margin-sm-hor, .margin-sm-left),
+	:is(.margin-sm-all > *, .margin-sm-hor-all > *, .margin-sm-left-all > *) {
+		margin-left: var(--sm);
+	}
+:is(.margin-sm, .margin-sm-hor, .margin-sm-right),
+	:is(.margin-sm-all > *, .margin-sm-hor-all > *, .margin-sm-right-all > *) {
+		margin-right: var(--sm);
+	}
+:is(.margin-sm, .margin-sm-ver, .margin-sm-top),
+	:is(.margin-sm-all > *, .margin-sm-ver-all > *, .margin-sm-top-all > *) {
+		margin-top: var(--sm);
+	}
+:is(.margin-sm, .margin-sm-ver, .margin-sm-bottom),
+	:is(.margin-sm-all > *, .margin-sm-ver-all > *, .margin-sm-bottom-all > *) {
+		margin-bottom: var(--sm);
+	}
+:is(.margin-md, .margin-md-hor, .margin-md-left),
+	:is(.margin-md-all > *, .margin-md-hor-all > *, .margin-md-left-all > *) {
+		margin-left: var(--md);
+	}
+:is(.margin-md, .margin-md-hor, .margin-md-right),
+	:is(.margin-md-all > *, .margin-md-hor-all > *, .margin-md-right-all > *) {
+		margin-right: var(--md);
+	}
+:is(.margin-md, .margin-md-ver, .margin-md-top),
+	:is(.margin-md-all > *, .margin-md-ver-all > *, .margin-md-top-all > *) {
+		margin-top: var(--md);
+	}
+:is(.margin-md, .margin-md-ver, .margin-md-bottom),
+	:is(.margin-md-all > *, .margin-md-ver-all > *, .margin-md-bottom-all > *) {
+		margin-bottom: var(--md);
+	}
+:is(.margin-lg, .margin-lg-hor, .margin-lg-left),
+	:is(.margin-lg-all > *, .margin-lg-hor-all > *, .margin-lg-left-all > *) {
+		margin-left: var(--lg);
+	}
+:is(.margin-lg, .margin-lg-hor, .margin-lg-right),
+	:is(.margin-lg-all > *, .margin-lg-hor-all > *, .margin-lg-right-all > *) {
+		margin-right: var(--lg);
+	}
+:is(.margin-lg, .margin-lg-ver, .margin-lg-top),
+	:is(.margin-lg-all > *, .margin-lg-ver-all > *, .margin-lg-top-all > *) {
+		margin-top: var(--lg);
+	}
+:is(.margin-lg, .margin-lg-ver, .margin-lg-bottom),
+	:is(.margin-lg-all > *, .margin-lg-ver-all > *, .margin-lg-bottom-all > *) {
+		margin-bottom: var(--lg);
+	}
+:is(.margin-xl, .margin-xl-hor, .margin-xl-left),
+	:is(.margin-xl-all > *, .margin-xl-hor-all > *, .margin-xl-left-all > *) {
+		margin-left: var(--xl);
+	}
+:is(.margin-xl, .margin-xl-hor, .margin-xl-right),
+	:is(.margin-xl-all > *, .margin-xl-hor-all > *, .margin-xl-right-all > *) {
+		margin-right: var(--xl);
+	}
+:is(.margin-xl, .margin-xl-ver, .margin-xl-top),
+	:is(.margin-xl-all > *, .margin-xl-ver-all > *, .margin-xl-top-all > *) {
+		margin-top: var(--xl);
+	}
+:is(.margin-xl, .margin-xl-ver, .margin-xl-bottom),
+	:is(.margin-xl-all > *, .margin-xl-ver-all > *, .margin-xl-bottom-all > *) {
+		margin-bottom: var(--xl);
+	}
+.no-padding {
+	padding: 0;
+}
+:is(.padding-sm, .padding-sm-hor, .padding-sm-left),
+	:is(.padding-sm-all > *, .padding-sm-hor-all > *, .padding-sm-left-all > *) {
+		padding-left: var(--sm);
+	}
+:is(.padding-sm, .padding-sm-hor, .padding-sm-right),
+	:is(.padding-sm-all > *, .padding-sm-hor-all > *, .padding-sm-right-all > *) {
+		padding-right: var(--sm);
+	}
+:is(.padding-sm, .padding-sm-ver, .padding-sm-top),
+	:is(.padding-sm-all > *, .padding-sm-ver-all > *, .padding-sm-top-all > *) {
+		padding-top: var(--sm);
+	}
+:is(.padding-sm, .padding-sm-ver, .padding-sm-bottom),
+	:is(.padding-sm-all > *, .padding-sm-ver-all > *, .padding-sm-bottom-all > *) {
+		padding-bottom: var(--sm);
+	}
+:is(.padding-md, .padding-md-hor, .padding-md-left),
+	:is(.padding-md-all > *, .padding-md-hor-all > *, .padding-md-left-all > *) {
+		padding-left: var(--md);
+	}
+:is(.padding-md, .padding-md-hor, .padding-md-right),
+	:is(.padding-md-all > *, .padding-md-hor-all > *, .padding-md-right-all > *) {
+		padding-right: var(--md);
+	}
+:is(.padding-md, .padding-md-ver, .padding-md-top),
+	:is(.padding-md-all > *, .padding-md-ver-all > *, .padding-md-top-all > *) {
+		padding-top: var(--md);
+	}
+:is(.padding-md, .padding-md-ver, .padding-md-bottom),
+	:is(.padding-md-all > *, .padding-md-ver-all > *, .padding-md-bottom-all > *) {
+		padding-bottom: var(--md);
+	}
+:is(.padding-lg, .padding-lg-hor, .padding-lg-left),
+	:is(.padding-lg-all > *, .padding-lg-hor-all > *, .padding-lg-left-all > *) {
+		padding-left: var(--lg);
+	}
+:is(.padding-lg, .padding-lg-hor, .padding-lg-right),
+	:is(.padding-lg-all > *, .padding-lg-hor-all > *, .padding-lg-right-all > *) {
+		padding-right: var(--lg);
+	}
+:is(.padding-lg, .padding-lg-ver, .padding-lg-top),
+	:is(.padding-lg-all > *, .padding-lg-ver-all > *, .padding-lg-top-all > *) {
+		padding-top: var(--lg);
+	}
+:is(.padding-lg, .padding-lg-ver, .padding-lg-bottom),
+	:is(.padding-lg-all > *, .padding-lg-ver-all > *, .padding-lg-bottom-all > *) {
+		padding-bottom: var(--lg);
+	}
+:is(.padding-xl, .padding-xl-hor, .padding-xl-left),
+	:is(.padding-xl-all > *, .padding-xl-hor-all > *, .padding-xl-left-all > *) {
+		padding-left: var(--xl);
+	}
+:is(.padding-xl, .padding-xl-hor, .padding-xl-right),
+	:is(.padding-xl-all > *, .padding-xl-hor-all > *, .padding-xl-right-all > *) {
+		padding-right: var(--xl);
+	}
+:is(.padding-xl, .padding-xl-ver, .padding-xl-top),
+	:is(.padding-xl-all > *, .padding-xl-ver-all > *, .padding-xl-top-all > *) {
+		padding-top: var(--xl);
+	}
+:is(.padding-xl, .padding-xl-ver, .padding-xl-bottom),
+	:is(.padding-xl-all > *, .padding-xl-ver-all > *, .padding-xl-bottom-all > *) {
+		padding-bottom: var(--xl);
+	}
+.no-radius {
+	border-radius: 0;
+}
+:is(.radius-sm, .radius-sm-left, .radius-sm-right, .radius-sm-top, .radius-sm-bottom),
+	:is(.radius-sm-top-left, .radius-sm-top-right, .radius-sm-bottom-left, .radius-sm-bottom-right),
+	:is(.radius-sm-all > *, .radius-sm-left-all > *, .radius-sm-right-all > *, .radius-sm-top-all > *, .radius-sm-bottom-all > *),
+	:is(.radius-sm-top-left-all > *, .radius-sm-top-right-all > *, .radius-sm-bottom-left-all > *, .radius-sm-bottom-right-all > *) {
+		overflow: hidden;
+	}
+:is(.radius-sm, .radius-sm-left, .radius-sm-top, .radius-sm-top-left),
+	:is(.radius-sm-all > *, .radius-sm-left-all > *, .radius-sm-top-all > *, .radius-sm-top-left-all > *) {
+		border-top-left-radius: var(--sm);
+	}
+:is(.radius-sm, .radius-sm-right, .radius-sm-top, .radius-sm-top-right),
+	:is(.radius-sm-all > *, .radius-sm-right-all > *, .radius-sm-top-all > *, .radius-sm-top-right-all > *) {
+		border-top-right-radius: var(--sm);
+	}
+:is(.radius-sm, .radius-sm-left, .radius-sm-bottom, .radius-sm-bottom-left),
+	:is(.radius-sm-all > *, .radius-sm-left-all > *, .radius-sm-bottom-all > *, .radius-sm-bottom-left-all > *) {
+		border-bottom-left-radius: var(--sm);
+	}
+:is(.radius-sm, .radius-sm-right, .radius-sm-bottom, .radius-sm-bottom-right),
+	:is(.radius-sm-all > *, .radius-sm-right-all > *, .radius-sm-bottom-all > *, .radius-sm-bottom-right-all > *) {
+		border-bottom-right-radius: var(--sm);
+	}
+:is(.radius-md, .radius-md-left, .radius-md-right, .radius-md-top, .radius-md-bottom),
+	:is(.radius-md-top-left, .radius-md-top-right, .radius-md-bottom-left, .radius-md-bottom-right),
+	:is(.radius-md-all > *, .radius-md-left-all > *, .radius-md-right-all > *, .radius-md-top-all > *, .radius-md-bottom-all > *),
+	:is(.radius-md-top-left-all > *, .radius-md-top-right-all > *, .radius-md-bottom-left-all > *, .radius-md-bottom-right-all > *) {
+		overflow: hidden;
+	}
+:is(.radius-md, .radius-md-left, .radius-md-top, .radius-md-top-left),
+	:is(.radius-md-all > *, .radius-md-left-all > *, .radius-md-top-all > *, .radius-md-top-left-all > *) {
+		border-top-left-radius: var(--md);
+	}
+:is(.radius-md, .radius-md-right, .radius-md-top, .radius-md-top-right),
+	:is(.radius-md-all > *, .radius-md-right-all > *, .radius-md-top-all > *, .radius-md-top-right-all > *) {
+		border-top-right-radius: var(--md);
+	}
+:is(.radius-md, .radius-md-left, .radius-md-bottom, .radius-md-bottom-left),
+	:is(.radius-md-all > *, .radius-md-left-all > *, .radius-md-bottom-all > *, .radius-md-bottom-left-all > *) {
+		border-bottom-left-radius: var(--md);
+	}
+:is(.radius-md, .radius-md-right, .radius-md-bottom, .radius-md-bottom-right),
+	:is(.radius-md-all > *, .radius-md-right-all > *, .radius-md-bottom-all > *, .radius-md-bottom-right-all > *) {
+		border-bottom-right-radius: var(--md);
+	}
+:is(.radius-lg, .radius-lg-left, .radius-lg-right, .radius-lg-top, .radius-lg-bottom),
+	:is(.radius-lg-top-left, .radius-lg-top-right, .radius-lg-bottom-left, .radius-lg-bottom-right),
+	:is(.radius-lg-all > *, .radius-lg-left-all > *, .radius-lg-right-all > *, .radius-lg-top-all > *, .radius-lg-bottom-all > *),
+	:is(.radius-lg-top-left-all > *, .radius-lg-top-right-all > *, .radius-lg-bottom-left-all > *, .radius-lg-bottom-right-all > *) {
+		overflow: hidden;
+	}
+:is(.radius-lg, .radius-lg-left, .radius-lg-top, .radius-lg-top-left),
+	:is(.radius-lg-all > *, .radius-lg-left-all > *, .radius-lg-top-all > *, .radius-lg-top-left-all > *) {
+		border-top-left-radius: var(--lg);
+	}
+:is(.radius-lg, .radius-lg-right, .radius-lg-top, .radius-lg-top-right),
+	:is(.radius-lg-all > *, .radius-lg-right-all > *, .radius-lg-top-all > *, .radius-lg-top-right-all > *) {
+		border-top-right-radius: var(--lg);
+	}
+:is(.radius-lg, .radius-lg-left, .radius-lg-bottom, .radius-lg-bottom-left),
+	:is(.radius-lg-all > *, .radius-lg-left-all > *, .radius-lg-bottom-all > *, .radius-lg-bottom-left-all > *) {
+		border-bottom-left-radius: var(--lg);
+	}
+:is(.radius-lg, .radius-lg-right, .radius-lg-bottom, .radius-lg-bottom-right),
+	:is(.radius-lg-all > *, .radius-lg-right-all > *, .radius-lg-bottom-all > *, .radius-lg-bottom-right-all > *) {
+		border-bottom-right-radius: var(--lg);
+	}
+:is(.radius-xl, .radius-xl-left, .radius-xl-right, .radius-xl-top, .radius-xl-bottom),
+	:is(.radius-xl-top-left, .radius-xl-top-right, .radius-xl-bottom-left, .radius-xl-bottom-right),
+	:is(.radius-xl-all > *, .radius-xl-left-all > *, .radius-xl-right-all > *, .radius-xl-top-all > *, .radius-xl-bottom-all > *),
+	:is(.radius-xl-top-left-all > *, .radius-xl-top-right-all > *, .radius-xl-bottom-left-all > *, .radius-xl-bottom-right-all > *) {
+		overflow: hidden;
+	}
+:is(.radius-xl, .radius-xl-left, .radius-xl-top, .radius-xl-top-left),
+	:is(.radius-xl-all > *, .radius-xl-left-all > *, .radius-xl-top-all > *, .radius-xl-top-left-all > *) {
+		border-top-left-radius: var(--xl);
+	}
+:is(.radius-xl, .radius-xl-right, .radius-xl-top, .radius-xl-top-right),
+	:is(.radius-xl-all > *, .radius-xl-right-all > *, .radius-xl-top-all > *, .radius-xl-top-right-all > *) {
+		border-top-right-radius: var(--xl);
+	}
+:is(.radius-xl, .radius-xl-left, .radius-xl-bottom, .radius-xl-bottom-left),
+	:is(.radius-xl-all > *, .radius-xl-left-all > *, .radius-xl-bottom-all > *, .radius-xl-bottom-left-all > *) {
+		border-bottom-left-radius: var(--xl);
+	}
+:is(.radius-xl, .radius-xl-right, .radius-xl-bottom, .radius-xl-bottom-right),
+	:is(.radius-xl-all > *, .radius-xl-right-all > *, .radius-xl-bottom-all > *, .radius-xl-bottom-right-all > *) {
+		border-bottom-right-radius: var(--xl);
+	}
+:is(h1, h2, h3, h4, h5, h6),
+:is(.is-1, .is-2, .is-3, .is-4, .is-5, .is-6) {
+	font-weight: var(--heading-font-weight, 700);
+	font: var(--heading-font-family, serif, system);
+}
+:is(h1:not(.is-2, .is-3, .is-4, .is-5, .is-6), .is-1) {
+	font-size: calc(clamp(0.6rem, 2vw, 1rem) * pow(1.2, 6));
+}
+:is(h2:not(.is-1, .is-3, .is-4, .is-5, .is-6), .is-2) {
+	font-size: calc(clamp(0.7rem, 2vw, 1rem) * pow(1.2, 5));
+}
+:is(h3:not(.is-1, .is-2, .is-4, .is-5, .is-6), .is-3) {
+	font-size: calc(clamp(0.8rem, 2vw, 1rem) * pow(1.2, 4));
+}
+:is(h4:not(.is-1, .is-2, .is-3, .is-5, .is-6), .is-4) {
+	font-size: calc(clamp(0.8rem, 2vw, 1rem) * pow(1.2, 3));
+}
+:is(h5:not(.is-1, .is-2, .is-3, .is-4, .is-6), .is-5) {
+	font-size: calc(clamp(0.9rem, 2vw, 1rem) * pow(1.2, 2));
+}
+:is(h6:not(.is-1, .is-2, .is-3, .is-4, .is-5), .is-6) {
+	font-size: calc(clamp(0.9rem, 2vw, 1rem) * pow(1.2, 1));
+}
+:is(.text-center, .text-center-all > *) {
+	text-align: center;
+}

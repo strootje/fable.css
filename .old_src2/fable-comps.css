@@ -1,0 +1,11 @@
+:root {
+	--color-primary: #f3f3f3;
+}
+
+@import './comps/blockquote.css';
+@import './comps/button.css';
+@import './comps/cover.css';
+@import './comps/flipper.css';
+@import './comps/marquee.css';
+@import './comps/panel.css';
+@import './comps/slider.css';

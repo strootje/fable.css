@@ -3,104 +3,102 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&amp;familyRaleway:wght@400;700&amp;display=swap" />
 		<link rel="stylesheet" href="../dist/fable.min.css" />
 		<title>Jodiestains</title>
 		<style>
 			body {
 				background-color: yellowgreen;
+				font-family: sans-serif;
 			}
-			body > :is(header, footer) {
+			body > :is(header, main, footer) {
 				background-color: rgba(0, 0, 0, 0.2);
 			}
 			.contain {
-				width: 960px;
+				width: min(100%, 960px);
 			}
 		</style>
 		<style>
 			:is(h1, h2, h3, h4, h5, h6, .is-1, .is-2, .is-3, .is-4, .is-5, .is-6) {
-				font-family: Rajdhani;
-				font-weight: 800;
+				font-weight: 700;
+			}
+			blockquote {
+				background-color: pink;
+			}
+			blockquote::before {
+				font-family: monospace;
+				font-size: 96px;
+				content: '"';
 			}
 			.btn {
 				background-color: pink;
 			}
+			.level.wrap > li {
+				width: max(25%, min(100%, 210px));
+			}
 		</style>
 	</head>
-	<body class="stack gap-md center top" onclick="document.body.classList.toggle('wires')">
-		<header class="stack padding-md stretch top center">
-			<div class="stack padding-md center gap-lg">
+	<body class="stack top center gap-md">
+		<header class="stack top stretch padding-md">
+			<div class="stack center gap-lg padding-md">
 				<figure class="logo" style="width: 300px; aspect-ratio: 1/1; background-color: gray"></figure>
-				<nav>
-					<ul class="level">
-						<li class="stack is-5 radius-lg"><a href="#" class="padding-lg">Behandelingen</a></li>
-						<li class="stack is-5 radius-lg"><a href="#" class="padding-lg">Reviews</a></li>
-						<li class="stack is-5 radius-lg"><a href="#" class="padding-lg">Contact</a></li>
-						<li class="stack is-5 radius-lg"><a href="#" class="padding-lg btn">Maak afspraak</a></li>
+				<nav class="contain">
+					<ul class="level top wrap grow-all">
+						<li class="stack is-5 radius-lg"><a href="#" class="padding-lg txt-center">Behandelingen</a></li>
+						<li class="stack is-5 radius-lg"><a href="#" class="padding-lg txt-center">Reviews</a></li>
+						<li class="stack is-5 radius-lg"><a href="#" class="padding-lg txt-center">Contact</a></li>
+						<li class="stack is-5 radius-lg"><a href="#" class="padding-lg txt-center btn">Maak afspraak</a></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
 
-		<main class="stack gap-md grow">
-			<h1>test</h1>
-			<h2>test</h2>
-			<h3>test</h3>
-			<h4>test</h4>
-			<h5>test</h5>
-			<h6>test</h6>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
-			<p>test</p>
+		<main class="stack contain gap-md padding-md grow">
+			<h1>Dag Schattebouten,</h1>
+			<p>
+				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint quasi ex officiis nobis cum necessitatibus atque natus, doloremque tempore quis illo
+				neque totam voluptatibus, quo a unde dolor similique expedita!
+			</p>
+			<ul class="stack gap-sm">
+				<li>
+					<blockquote class="level padding-xl radius-md">
+						<main class="stack gap-sm padding-xl">
+							<p>
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos temporibus, iste, pariatur nesciunt qui laboriosam deserunt maiores totam
+								ipsum, nisi voluptatem et obcaecati corporis eius aliquid illo nihil quos quod!
+							</p>
+							<h2 class="is-5">asdasd</h2>
+						</main>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote class="level padding-xl radius-md">
+						<main class="stack gap-sm padding-xl">
+							<p>
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos temporibus, iste, pariatur nesciunt qui laboriosam deserunt maiores totam
+								ipsum, nisi voluptatem et obcaecati corporis eius aliquid illo nihil quos quod!
+							</p>
+							<h2 class="is-5">asdasd</h2>
+						</main>
+					</blockquote>
+				</li>
+				<li>
+					<blockquote class="level padding-xl radius-md">
+						<main class="stack gap-sm padding-xl">
+							<p>
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos temporibus, iste, pariatur nesciunt qui laboriosam deserunt maiores totam
+								ipsum, nisi voluptatem et obcaecati corporis eius aliquid illo nihil quos quod!
+							</p>
+							<h2 class="is-5">asdasd</h2>
+						</main>
+					</blockquote>
+				</li>
+			</ul>
+			<section class="stack"></section>
 		</main>
 
-		<footer class="stack padding-md stretch top center">
-			<div class="level contain gap-auto">
-				<section class="stack center top">
+		<footer class="stack bottom center stretch padding-md padding-xl-bottom">
+			<div class="contain level wrap gap-auto">
+				<section class="stack top">
 					<h3 class="is-5">Socials</h3>
 					<ul class="stack">
 						<li>@jodie.stains</li>
@@ -110,14 +108,24 @@
 					</ul>
 				</section>
 
-				<section class="stack center top">
+				<section class="stack top">
 					<h3 class="is-5">Nuttige linkjes</h3>
-					<ul class="stack"></ul>
+					<ul class="stack">
+						<li>@jodie.stains</li>
+						<li>@jodie.stains</li>
+						<li>@jodie.stains</li>
+						<li>@jodie.stains</li>
+					</ul>
 				</section>
 
-				<section class="stack center top">
+				<section class="stack top">
 					<h3 class="is-5">Informatie</h3>
-					<ul class="stack"></ul>
+					<ul class="stack">
+						<li>@jodie.stains</li>
+						<li>@jodie.stains</li>
+						<li>@jodie.stains</li>
+						<li>@jodie.stains</li>
+					</ul>
 				</section>
 			</div>
 		</footer>

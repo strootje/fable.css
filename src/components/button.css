@@ -1,0 +1,10 @@
+.button {
+	background-color: var(--surface1);
+	color: var(--text1);
+
+	&.brand {
+		background-color: var(--brand);
+		font-weight: 700;
+		color: var(--text2);
+	}
+}

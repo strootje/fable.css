@@ -1,0 +1,10 @@
+blockquote {
+	height: 100%;
+	background-color: var(--surface1);
+
+	&::before {
+		font-family: monospace;
+		font-size: 96px;
+		content: '"';
+	}
+}

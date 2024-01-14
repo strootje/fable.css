@@ -1,0 +1,54 @@
+body {
+	gap: var(--pt-md);
+	display: grid;
+
+	grid-template-rows:
+		[header] var(--header-height, max-content)
+		[content] auto
+		[footer] var(--footer-height, max-content);
+
+	grid-template-columns:
+		[fullbleed-start]
+		max(var(--pt-md), ((100vw - var(--content-width, $contentMaxWidth)) / 2))
+		[content-start]
+		repeat(var(--columns, 12), 1fr)
+		[content-end]
+		max(var(--pt-md), ((100vw - var(--content-width, $contentMaxWidth)) / 2))
+		[fullbleed-end];
+
+	& > :is(header, :is(main, article), footer):not(.hero) {
+		grid-column: content;
+	}
+
+	& > :is(header, :is(main, article), footer).hero {
+		grid-column: fullbleed;
+
+		& > * {
+			grid-column: content;
+		}
+	}
+
+	& > header {
+		grid-row: header;
+	}
+	& > :is(main, article) {
+		grid-row: content;
+	}
+	& > footer {
+		grid-row: footer;
+	}
+}
+
+body > .hero > *,
+body > :is(header, :is(main, article), footer),
+:is(body, .subgrid) .subgrid {
+	grid-template-columns: subgrid;
+	display: grid;
+	gap: inherit;
+}
+
+@for $i from 1 to 12 {
+	.span-$i {
+		grid-column: span $i;
+	}
+}

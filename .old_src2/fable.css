@@ -1,0 +1,179 @@
+:root {
+	--pt-sm: calc(var(--pt-md) / 2);
+	--pt-md: calc(var(--base, 8px) * 1);
+	--pt-lg: calc(var(--pt-md) * 2);
+	--pt-xl: calc(var(--pt-md) * 3);
+}
+
+:is(.level, .stack) {
+	display: flex;
+
+	&:is(menu, ol, ul) {
+		list-style: none;
+		padding: unset;
+	}
+
+	&.stack:not(.reverse) {
+		flex-direction: column;
+	}
+	&.reverse.level {
+		flex-direction: row-reverse;
+	}
+	&.reverse.stack {
+		flex-direction: column-reverse;
+	}
+
+	&.wrap {
+		flex-wrap: wrap;
+	}
+
+	&:not(.gap-auto):is(.level.left, .stack.top) {
+		justify-content: start;
+	}
+	&:not(.gap-auto):is(.center):not(.level:is(.left, .right), .stack:is(.top, .bottom)) {
+		justify-content: center;
+	}
+	&:not(.gap-auto):is(.level.right, .stack.bottom) {
+		justify-content: end;
+	}
+	&:is(.level.top, .stack.left) {
+		align-items: start;
+	}
+	&:is(.center):not(.level:is(.top, .bottom), .stack:is(.left, .right)) {
+		align-items: center;
+	}
+	&:is(.level.bottom, .stack.right) {
+		align-items: end;
+	}
+
+	&.level > .pin-top,
+	&.stack > .pin-left {
+		align-self: start;
+	}
+	& > .pin-center {
+		align-self: center;
+	}
+	& > .stretch {
+		align-self: stretch;
+	}
+	&.level > .pin-bottom,
+	&.stack > .pin-right {
+		align-self: end;
+	}
+
+	@each $s in $sizes {
+		&.gap-$s {
+			gap: var(--pt-$s);
+		}
+	}
+	&.gap-auto {
+		justify-content: space-between;
+	}
+
+	&.grow-all > *,
+	& > .grow {
+		flex-grow: 1;
+	}
+}
+
+@each $s in $sizes {
+	:is(.margin-$s, .margin-$(s)-hor, .margin-$(s)-left),
+	:is(.margin-$(s)-all > *, .margin-$(s)-hor-all > *, .margin-$(s)-left-all > *) {
+		margin-left: var(--pt-$s);
+	}
+	:is(.margin-$s, .margin-$(s)-hor, .margin-$(s)-right),
+	:is(.margin-$(s)-all > *, .margin-$(s)-hor-all > *, .margin-$(s)-right-all > *) {
+		margin-right: var(--pt-$s);
+	}
+	:is(.margin-$s, .margin-$(s)-ver, .margin-$(s)-top),
+	:is(.margin-$(s)-all > *, .margin-$(s)-ver-all > *, .margin-$(s)-top-all > *) {
+		margin-top: var(--pt-$s);
+	}
+	:is(.margin-$s, .margin-$(s)-ver, .margin-$(s)-bottom),
+	:is(.margin-$(s)-all > *, .margin-$(s)-ver-all > *, .margin-$(s)-bottom-all > *) {
+		margin-bottom: var(--pt-$s);
+	}
+}
+
+@each $s in $sizes {
+	:is(.padding-$s, .padding-$(s)-hor, .padding-$(s)-left),
+	:is(.padding-$(s)-all > *, .padding-$(s)-hor-all > *, .padding-$(s)-left-all > *) {
+		padding-left: var(--pt-$s);
+	}
+	:is(.padding-$s, .padding-$(s)-hor, .padding-$(s)-right),
+	:is(.padding-$(s)-all > *, .padding-$(s)-hor-all > *, .padding-$(s)-right-all > *) {
+		padding-right: var(--pt-$s);
+	}
+	:is(.padding-$s, .padding-$(s)-ver, .padding-$(s)-top),
+	:is(.padding-$(s)-all > *, .padding-$(s)-ver-all > *, .padding-$(s)-top-all > *) {
+		padding-top: var(--pt-$s);
+	}
+	:is(.padding-$s, .padding-$(s)-ver, .padding-$(s)-bottom),
+	:is(.padding-$(s)-all > *, .padding-$(s)-ver-all > *, .padding-$(s)-bottom-all > *) {
+		padding-bottom: var(--pt-$s);
+	}
+}
+
+@each $s in $sizes {
+	:is(.radius-$s, .radius-$(s)-left, .radius-$(s)-right, .radius-$(s)-top, .radius-$(s)-bottom),
+	:is(.radius-$(s)-top-left, .radius-$(s)-top-right, .radius-$(s)-bottom-left, .radius-$(s)-bottom-right),
+	:is(.radius-$(s)-all > *, .radius-$(s)-left-all > *, .radius-$(s)-right-all > *, .radius-$(s)-top-all > *, .radius-$(s)-bottom-all > *),
+	:is(.radius-$(s)-top-left-all > *, .radius-$(s)-top-right-all > *, .radius-$(s)-bottom-left-all > *, .radius-$(s)-bottom-right-all > *) {
+		overflow: hidden;
+	}
+
+	:is(.radius-$s, .radius-$(s)-left, .radius-$(s)-top, .radius-$(s)-top-left),
+	:is(.radius-$(s)-all > *, .radius-$(s)-left-all > *, .radius-$(s)-top-all > *, .radius-$(s)-top-left-all > *) {
+		border-top-left-radius: var(--pt-$s);
+	}
+	:is(.radius-$s, .radius-$(s)-right, .radius-$(s)-top, .radius-$(s)-top-right),
+	:is(.radius-$(s)-all > *, .radius-$(s)-right-all > *, .radius-$(s)-top-all > *, .radius-$(s)-top-right-all > *) {
+		border-top-right-radius: var(--pt-$s);
+	}
+	:is(.radius-$s, .radius-$(s)-left, .radius-$(s)-bottom, .radius-$(s)-bottom-left),
+	:is(.radius-$(s)-all > *, .radius-$(s)-left-all > *, .radius-$(s)-bottom-all > *, .radius-$(s)-bottom-left-all > *) {
+		border-bottom-left-radius: var(--pt-$s);
+	}
+	:is(.radius-$s, .radius-$(s)-right, .radius-$(s)-bottom, .radius-$(s)-bottom-right),
+	:is(.radius-$(s)-all > *, .radius-$(s)-right-all > *, .radius-$(s)-bottom-all > *, .radius-$(s)-bottom-right-all > *) {
+		border-bottom-right-radius: var(--pt-$s);
+	}
+}
+
+:is(h1:not(.is-2, .is-3, .is-4, .is-5, .is-6), .is-1) {
+	font-size: calc(clamp(0.6rem, 2vw, 1rem) * pow($fontScale, 6));
+}
+:is(h2:not(.is-1, .is-3, .is-4, .is-5, .is-6), .is-2) {
+	font-size: calc(clamp(0.7rem, 2vw, 1rem) * pow($fontScale, 5));
+}
+:is(h3:not(.is-1, .is-2, .is-4, .is-5, .is-6), .is-3) {
+	font-size: calc(clamp(0.8rem, 2vw, 1rem) * pow($fontScale, 4));
+}
+:is(h4:not(.is-1, .is-2, .is-3, .is-5, .is-6), .is-4) {
+	font-size: calc(clamp(0.8rem, 2vw, 1rem) * pow($fontScale, 3));
+}
+:is(h5:not(.is-1, .is-2, .is-3, .is-4, .is-6), .is-5) {
+	font-size: calc(clamp(0.9rem, 2vw, 1rem) * pow($fontScale, 2));
+}
+:is(h6:not(.is-1, .is-2, .is-3, .is-4, .is-5), .is-6) {
+	font-size: calc(clamp(0.9rem, 2vw, 1rem) * pow($fontScale, 1));
+}
+
+:is(.float-left, .float-right) {
+	position: relative;
+
+	&.float-left {
+		float: left;
+	}
+	&.float-right {
+		float: right;
+	}
+}
+
+:is(.text-center, .text-center-all > *) {
+	text-align: center;
+}
+
+.base-3-all > * {
+	flex: 1 1 200px;
+}

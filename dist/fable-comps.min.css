@@ -1,107 +1,43 @@
-.cover {
-	width: 100vw;
-	height: 100vh;
-	-webkit-background-clip: text;
-	        background-clip: text;
+a {
+	color: var(--text1);
+	text-decoration: none;
 }
-.flipper {
-	width: 100%;
+
+	a:hover {
+		color: var(--text2);
+	}
+blockquote {
 	height: 100%;
-	perspective: 1000px;
-	transform-style: preserve-3d;
-	display: grid;
+	background-color: var(--surface1);
 }
-.flipper > :is(:nth-child(1), :nth-child(2)) {
-		width: inherit;
-		height: inherit;
-		transition-duration: 0.8s;
-		transition-property: transform;
-		backface-visibility: hidden;
-		grid-column: 1;
-		grid-row: 1;
+blockquote::before {
+		font-family: monospace;
+		font-size: 96px;
+		content: '"';
 	}
-.flipper > :is(:nth-child(1), :nth-child(2)):nth-child(1) {
-			z-index: 2;
+.button {
+	background-color: var(--surface1);
+	color: var(--text1);
+}
+.button.brand {
+		background-color: var(--brand);
+		font-weight: 700;
+		color: var(--text2);
+	}
+details[open] > summary::before {
+		transform: rotateZ(90deg);
+	}
+details[open] > *:not(summary) {
+		animation: details-show 200ms;
+	}
+/* display: flex; */
+/* align-items: center; */
+details > summary > :is(h1, h2, h3, h4, h5, h6) {
+			display: inline-block;
 		}
-.flipper:is(:hover, :active) > :nth-child(1), input[type='checkbox']:checked ~ .flipper > :nth-child(1) {
-		transform: rotateY(180deg);
-	}
-.flipper > :nth-child(2) {
-		transform: rotateY(-180deg);
-	}
-.flipper:is(:hover, :active) > :nth-child(2), input[type='checkbox']:checked ~ .flipper > :nth-child(2) {
-		transform: rotateY(0deg);
-	}
-label:has(.flipper) > input[type='checkbox'] {
-	display: none;
-}
-.marquee {
-	width: 100%;
-	overflow: hidden;
-}
-.marquee > * {
-	flex-shrink: 0;
-	width: -moz-max-content;
-	width: max-content;
-	animation-name: marquee;
-	animation-duration: 12s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-delay: calc(-1 * var(--delay, 0));
-}
-.marquee.u-reverse > * {
-	animation-direction: reverse;
-}
-.marquee:is(:hover, :active) > * {
-	animation-play-state: paused;
-}
-@keyframes marquee {
+@keyframes details-show {
 	from {
-		transform: translateX(0%);
-	}
-	to {
-		transform: translateX(calc((100% + var(--gap, 1rem)) * -1));
+		opacity: 0;
+		transform: var(--details-translate, translateY(-0.5em));
 	}
 }
-.panel {
-	border-radius: 5px;
-}
-.panel:not(.u-nopadding) {
-		padding: clamp(var(--padding-min, 1rem), 2.5vw, var(--padding-max, 2rem));
-	}
-.panel:not(.u-overflow) {
-		overflow: hidden;
-	}
-.slider {
-	width: inherit;
-	height: inherit;
-	overflow-x: scroll;
-	scroll-snap-type: x mandatory;
-	scroll-behavior: smooth;
-}
-.slider > li {
-		flex-shrink: 0;
-		width: inherit;
-		scroll-snap-align: center;
-		scroll-snap-stop: always;
-		position: relative;
-	}
-.slider > li img {
-			width: 100%;
-			height: 100%;
-			-o-object-fit: cover;
-			   object-fit: cover;
-			-o-object-position: center top;
-			   object-position: center top;
-		}
-.slider > li a {
-			position: absolute;
-			top: calc(50% - 1.5rem);
-			font-size: 3rem;
-		}
-.slider > li a:first-of-type {
-				left: 10%;
-			}
-.slider > li a:last-of-type {
-				right: 10%;
-			}

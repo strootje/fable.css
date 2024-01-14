@@ -22,6 +22,7 @@ export default {
 			variables: {
 				fontScale: '1.2',
 				sizes: 'sm, md, lg, xl',
+				contentMaxWidth: '1140px',
 			},
 		}),
 		NestedCss({}),

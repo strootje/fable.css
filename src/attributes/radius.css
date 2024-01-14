@@ -1,0 +1,29 @@
+.no-radius {
+	border-radius: 0;
+}
+
+@each $s in $sizes {
+	:is(.radius-$s, .radius-$(s)-left, .radius-$(s)-right, .radius-$(s)-top, .radius-$(s)-bottom),
+	:is(.radius-$(s)-top-left, .radius-$(s)-top-right, .radius-$(s)-bottom-left, .radius-$(s)-bottom-right),
+	:is(.radius-$(s)-all > *, .radius-$(s)-left-all > *, .radius-$(s)-right-all > *, .radius-$(s)-top-all > *, .radius-$(s)-bottom-all > *),
+	:is(.radius-$(s)-top-left-all > *, .radius-$(s)-top-right-all > *, .radius-$(s)-bottom-left-all > *, .radius-$(s)-bottom-right-all > *) {
+		overflow: hidden;
+	}
+
+	:is(.radius-$s, .radius-$(s)-left, .radius-$(s)-top, .radius-$(s)-top-left),
+	:is(.radius-$(s)-all > *, .radius-$(s)-left-all > *, .radius-$(s)-top-all > *, .radius-$(s)-top-left-all > *) {
+		border-top-left-radius: var(--$(s));
+	}
+	:is(.radius-$s, .radius-$(s)-right, .radius-$(s)-top, .radius-$(s)-top-right),
+	:is(.radius-$(s)-all > *, .radius-$(s)-right-all > *, .radius-$(s)-top-all > *, .radius-$(s)-top-right-all > *) {
+		border-top-right-radius: var(--$(s));
+	}
+	:is(.radius-$s, .radius-$(s)-left, .radius-$(s)-bottom, .radius-$(s)-bottom-left),
+	:is(.radius-$(s)-all > *, .radius-$(s)-left-all > *, .radius-$(s)-bottom-all > *, .radius-$(s)-bottom-left-all > *) {
+		border-bottom-left-radius: var(--$(s));
+	}
+	:is(.radius-$s, .radius-$(s)-right, .radius-$(s)-bottom, .radius-$(s)-bottom-right),
+	:is(.radius-$(s)-all > *, .radius-$(s)-right-all > *, .radius-$(s)-bottom-all > *, .radius-$(s)-bottom-right-all > *) {
+		border-bottom-right-radius: var(--$(s));
+	}
+}

@@ -1,0 +1,10 @@
+:is(.float-left, .float-right) {
+	position: relative;
+
+	&.float-left {
+		float: left;
+	}
+	&.float-right {
+		float: right;
+	}
+}

@@ -1,0 +1,22 @@
+.no-margin {
+	margin: 0;
+}
+
+@each $s in $sizes {
+	:is(.margin-$s, .margin-$(s)-hor, .margin-$(s)-left),
+	:is(.margin-$(s)-all > *, .margin-$(s)-hor-all > *, .margin-$(s)-left-all > *) {
+		margin-left: var(--$(s));
+	}
+	:is(.margin-$s, .margin-$(s)-hor, .margin-$(s)-right),
+	:is(.margin-$(s)-all > *, .margin-$(s)-hor-all > *, .margin-$(s)-right-all > *) {
+		margin-right: var(--$(s));
+	}
+	:is(.margin-$s, .margin-$(s)-ver, .margin-$(s)-top),
+	:is(.margin-$(s)-all > *, .margin-$(s)-ver-all > *, .margin-$(s)-top-all > *) {
+		margin-top: var(--$(s));
+	}
+	:is(.margin-$s, .margin-$(s)-ver, .margin-$(s)-bottom),
+	:is(.margin-$(s)-all > *, .margin-$(s)-ver-all > *, .margin-$(s)-bottom-all > *) {
+		margin-bottom: var(--$(s));
+	}
+}

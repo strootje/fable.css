@@ -1,0 +1,22 @@
+.no-padding {
+	padding: 0;
+}
+
+@each $s in $sizes {
+	:is(.padding-$s, .padding-$(s)-hor, .padding-$(s)-left),
+	:is(.padding-$(s)-all > *, .padding-$(s)-hor-all > *, .padding-$(s)-left-all > *) {
+		padding-left: var(--$(s));
+	}
+	:is(.padding-$s, .padding-$(s)-hor, .padding-$(s)-right),
+	:is(.padding-$(s)-all > *, .padding-$(s)-hor-all > *, .padding-$(s)-right-all > *) {
+		padding-right: var(--$(s));
+	}
+	:is(.padding-$s, .padding-$(s)-ver, .padding-$(s)-top),
+	:is(.padding-$(s)-all > *, .padding-$(s)-ver-all > *, .padding-$(s)-top-all > *) {
+		padding-top: var(--$(s));
+	}
+	:is(.padding-$s, .padding-$(s)-ver, .padding-$(s)-bottom),
+	:is(.padding-$(s)-all > *, .padding-$(s)-ver-all > *, .padding-$(s)-bottom-all > *) {
+		padding-bottom: var(--$(s));
+	}
+}

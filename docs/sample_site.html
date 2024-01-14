@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../dist/fable-all.min.css" />
+		<title>Document</title>
+
+		<style>
+			:root {
+				--content-width: 960px;
+				--color-primary: hotpink;
+			}
+
+			footer {
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+
+			@media only screen and (512px <= width <= 768px) {
+				:root {
+					--columns: 4;
+				}
+			}
+
+			@media only screen and (width <= 512px) {
+				:root {
+					--columns: 1;
+				}
+			}
+		</style>
+
+		<style>
+			header > img {
+				justify-self: center;
+			}
+
+			header > nav li,
+			footer > div > section > :is(nav, section) {
+				flex: 1 1 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img class="span-12" src="https://jodiestains.com/images/logo_hu50ad7e4503b4002974734438cf52ee52_729212_240x0_resize_q75_h2_box_3.webp" />
+			<nav class="span-12">
+				<ul class="level wrap">
+					<li class="stack is-5 radius-md"><a class="text-center padding-lg" href="#">Behandelingen</a></li>
+					<li class="stack is-5 radius-md"><a class="text-center padding-lg" href="#">Reviews</a></li>
+					<li class="stack is-5 radius-md"><a class="text-center padding-lg" href="#">Contact</a></li>
+					<li class="stack is-5 radius-md"><a class="text-center padding-lg button" href="#">Boek Afspraak</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<article>
+			<h1 class="span-12">Dag Schattebouten,</h1>
+
+			<main class="span-12">
+				<aside class="float-right margin-md-left radius-md-left" style="background-color: hotpink">
+					<nav class="padding-md">
+						<ul class="stack">
+							<li>L</li>
+							<li><a href="#">NL</a></li>
+							<li><a href="#">EN</a></li>
+						</ul>
+					</nav>
+				</aside>
+
+				<p class="padding-lg">
+					Wat leuk dat je me hebt gevonden! Als je me nog niet kent; ik ben Jodie en zoals de naam misschien al doet vermoeden degene die deze tent runt.
+					Art school drop-out turned hairdresser. Na 9 jaar op verschillende locaties van de Kinki Kappers gewerkt te hebben was ik toe aan iets dat meer
+					eigen is. Ik heb veel mogen leren in die 9 jaar, ontelbare trainingen gevolgd en certificaten behaald en ik heb heel veel zin om al die kennis en
+					passie los te laten op jouw koppie!
+				</p>
+				<p class="padding-lg">
+					Ik vind het vooral belangrijk dat wanneer jij in m’n stoel zit dat jij je op je gemak voelt. Eigenlijk is dat niet eens genoeg, ik wil dat jij je
+					thuis voelt. Het maakt me niks uit wie je bent, hoe je eruit ziet of wie je zoent. Ik wil je een kapsel geven waarin jij je jezelf + some extra
+					sparkle in voelt. Ik identificeer mezelf als queer en ben neurodivers, en verwelkom je in mijn stoel als jij dat ook bent. Ook als je in
+					transitie bent en je hebt wat extra steun en advies nodig over je haar ben je meer dan welkom.
+				</p>
+				<p class="padding-lg">
+					Mijn specialiteit is absoluut kleuren. Ik kan je zeker van een gaaf kapseltje voorzien door te knippen, maar met kleuren kan ik helemaal m’n
+					creatieve ei kwijt. Balayages, hele koppen vol babylights, full-on clown, scene-queen realness, subtiele kleurschakeringen, you name it. Neem een
+					kijkje op mijn instagram om te zien wat ik bedoel.
+				</p>
+			</main>
+
+			<p class="span-12">
+				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit consectetur officiis sit quos, autem, fugiat harum reprehenderit at cum dolores
+				nemo veritatis culpa nulla ad delectus in quaerat aliquid illo!
+			</p>
+
+			<ul class="subgrid span-12">
+				<li class="span-6">
+					<blockquote class="level padding-lg">
+						<main class="stack padding-lg">
+							<p class="grow">
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum repudiandae molestias dolores, delectus enim totam odio ut sequi
+								reiciendis sint nulla. Laudantium sunt deleniti quae quis vitae? Maiores, consequatur.
+							</p>
+							<h2 class="is-5">Deen</h2>
+						</main>
+					</blockquote>
+				</li>
+				<li class="span-6">
+					<blockquote class="level padding-lg">
+						<main class="stack padding-lg">
+							<p class="grow">
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum repudiandae molestias dolores, delectus enim totam odio ut sequi
+								reiciendis sint nulla. Laudantium sunt deleniti quae quis vitae? Maiores, consequatur.
+							</p>
+							<h2 class="is-5">Deen</h2>
+						</main>
+					</blockquote>
+				</li>
+				<li class="span-6">
+					<blockquote class="level padding-lg">
+						<main class="stack padding-lg">
+							<p class="grow">
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius harum repudiandae molestias dolores, delectus enim totam odio ut sequi
+								reiciendis sint nulla. Laudantium sunt deleniti quae quis vitae? Maiores, consequatur.
+							</p>
+							<h2 class="is-5">Deen</h2>
+						</main>
+					</blockquote>
+				</li>
+			</ul>
+		</article>
+
+		<footer class="hero">
+			<div>
+				<section class="level span-12 wrap">
+					<nav>
+						<h3 class="is-6">Socials</h3>
+						<ul class="stack">
+							<li><a href="#">Jodie.stains</a></li>
+							<li><a href="#">Jodie.stains</a></li>
+							<li><a href="#">Jodie.stains</a></li>
+						</ul>
+					</nav>
+
+					<nav>
+						<h3 class="is-6">Nuttige Linkjes</h3>
+						<ul class="stack">
+							<li><a href="#">Jodie.stains</a></li>
+							<li><a href="#">Jodie.stains</a></li>
+							<li><a href="#">Jodie.stains</a></li>
+						</ul>
+					</nav>
+
+					<section>
+						<h3 class="is-6">Informatie</h3>
+						<ul class="stack">
+							<li><a href="#">Jodie.stains</a></li>
+							<li><a href="#">Jodie.stains</a></li>
+							<li><a href="#">Jodie.stains</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<span>made by strooware</span>
+			</div>
+		</footer>
+	</body>
+</html>

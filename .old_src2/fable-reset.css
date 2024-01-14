@@ -1,0 +1,36 @@
+/* 
+ * inspired by, see:
+ * https://elad2412.github.io/the-new-css-reset/
+**/
+
+html {
+	font-size: 16px;
+	line-height: 1.6;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+:is(html, body) {
+	height: max-content;
+}
+
+:is(*, *::before, *::after) {
+	line-height: inherit;
+	box-sizing: inherit;
+	font-size: inherit;
+}
+
+:is(body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol, blockquote) {
+	padding: unset;
+	margin: unset;
+}
+
+:is(img, picture, video, canvas, svg) {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+
+:is(input, button, textarea, select) {
+	font: inherit;
+}
