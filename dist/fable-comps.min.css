@@ -50,14 +50,3 @@ details {
 		transform: var(--details-translate, translateY(-0.5em));
 	}
 }
-.panel {
-	border-radius: 5px;
-
-	&:not(.u-nopadding) {
-		padding: clamp(var(--padding-min, 1rem), 2.5vw, var(--padding-max, 2rem));
-	}
-
-	&:not(.u-overflow) {
-		overflow: hidden;
-	}
-}
