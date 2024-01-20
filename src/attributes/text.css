@@ -23,6 +23,14 @@
 	font-size: calc(clamp(0.9rem, 2vw, 1rem) * pow($fontScale, 1));
 }
 
+:is(.text-left, .text-left-all > *) {
+	text-align: left;
+}
+
 :is(.text-center, .text-center-all > *) {
 	text-align: center;
+}
+
+:is(.text-right, .text-right-all > *) {
+	text-align: right;
 }
