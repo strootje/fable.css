@@ -5,96 +5,83 @@
 	--xl: calc(var(--md) * 3);
 }
 
-:is(:is(.grid, .fable), :is(.level, .stack)):is(menu, ol, ul) {
+:is(:is(.grid, .fable), :is(.level, .stack)) {
+	&:is(menu, ol, ul) {
 		list-style: none;
 		padding: unset;
 	}
 
-:is(:is(.grid, .fable), :is(.level, .stack)):not(.no-gap) {
+	&:not(.no-gap) {
 		gap: var(--md);
 	}
-
-:is(:is(.grid, .fable), :is(.level, .stack)).gap-sm {
+		&.gap-sm {
 			gap: var(--sm);
 		}
-
-:is(:is(.grid, .fable), :is(.level, .stack)).gap-md {
+		&.gap-md {
 			gap: var(--md);
 		}
-
-:is(:is(.grid, .fable), :is(.level, .stack)).gap-lg {
+		&.gap-lg {
 			gap: var(--lg);
 		}
-
-:is(:is(.grid, .fable), :is(.level, .stack)).gap-xl {
+		&.gap-xl {
 			gap: var(--xl);
 		}
+}
 
 :is(.grid, .fable) {
 	display: grid;
-}
-
-:is(.grid, .fable) > .span-1 {
+		& > .span-1 {
 			grid-column: span 1;
 		}
-
-:is(.grid, .fable) > .span-2 {
+		& > .span-2 {
 			grid-column: span 2;
 		}
-
-:is(.grid, .fable) > .span-3 {
+		& > .span-3 {
 			grid-column: span 3;
 		}
-
-:is(.grid, .fable) > .span-4 {
+		& > .span-4 {
 			grid-column: span 4;
 		}
-
-:is(.grid, .fable) > .span-5 {
+		& > .span-5 {
 			grid-column: span 5;
 		}
-
-:is(.grid, .fable) > .span-6 {
+		& > .span-6 {
 			grid-column: span 6;
 		}
-
-:is(.grid, .fable) > .span-7 {
+		& > .span-7 {
 			grid-column: span 7;
 		}
-
-:is(.grid, .fable) > .span-8 {
+		& > .span-8 {
 			grid-column: span 8;
 		}
-
-:is(.grid, .fable) > .span-9 {
+		& > .span-9 {
 			grid-column: span 9;
 		}
-
-:is(.grid, .fable) > .span-10 {
+		& > .span-10 {
 			grid-column: span 10;
 		}
-
-:is(.grid, .fable) > .span-11 {
+		& > .span-11 {
 			grid-column: span 11;
 		}
-
-:is(.grid, .fable) > .span-12 {
+		& > .span-12 {
 			grid-column: span 12;
 		}
 
-:is(.grid, .fable) > .grid:not(.no-inherit) {
+	& > .grid:not(.no-inherit) {
 		grid-template-columns: subgrid;
 		gap: inherit;
 	}
+}
 
-.fable:not(.panecake-with-hero) {
+.fable {
+	&:not(.panecake-with-hero) {
 		grid-template-columns:
 			[content-start]
 			repeat(var(--columns, 12), 1fr)
 			[content-end];
 	}
 
-.fable.panecake-with-hero {
+	&.panecake-with-hero {
 		grid-template-rows:
 			[header] var(--header-height, max-content)
 			[content] auto
@@ -108,101 +95,90 @@
 			[content-end]
 			max(var(--md), ((100vw - var(--content-width, 1140px)) / 2))
 			[fullbleed-end];
-	}
 
-.fable.panecake-with-hero > :is(header, :is(main, article), footer) {
+		& > :is(header, :is(main, article), footer) {
 			grid-template-columns: subgrid;
 			grid-column: content;
 			display: grid;
 		}
 
-.fable.panecake-with-hero .hero {
+		& .hero {
 			grid-column: fullbleed;
-		}
 
-.fable.panecake-with-hero .hero > :not(.hero) {
+			& > :not(.hero) {
 				grid-column: content;
 			}
+		}
 
-.fable.panecake-with-hero > header {
+		& > header {
 			grid-row: header;
 		}
-
-.fable.panecake-with-hero > :is(main, article) {
+		& > :is(main, article) {
 			grid-row: content;
 		}
-
-.fable.panecake-with-hero > footer {
+		& > footer {
 			grid-row: footer;
 		}
+	}
+}
 
 :is(.level, .stack) {
 	display: flex;
-}
 
-:is(.level, .stack).stack:not(.reverse) {
+	&.stack:not(.reverse) {
 		flex-direction: column;
 	}
-
-:is(.level, .stack).reverse.level {
+	&.reverse.level {
 		flex-direction: row-reverse;
 	}
-
-:is(.level, .stack).reverse.stack {
+	&.reverse.stack {
 		flex-direction: column-reverse;
 	}
 
-:is(.level, .stack).wrap {
+	&.wrap {
 		flex-wrap: wrap;
 	}
 
-:is(.level, .stack):not(.gap-auto):is(.level.left, .stack.top) {
+	&:not(.gap-auto):is(.level.left, .stack.top) {
 		justify-content: start;
 	}
-
-:is(.level, .stack):not(.gap-auto):is(.center):not(.level:is(.left, .right), .stack:is(.top, .bottom)) {
+	&:not(.gap-auto):is(.center):not(.level:is(.left, .right), .stack:is(.top, .bottom)) {
 		justify-content: center;
 	}
-
-:is(.level, .stack):not(.gap-auto):is(.level.right, .stack.bottom) {
+	&:not(.gap-auto):is(.level.right, .stack.bottom) {
 		justify-content: end;
 	}
-
-:is(.level, .stack):is(.level.top, .stack.left) {
+	&:is(.level.top, .stack.left) {
 		align-items: start;
 	}
-
-:is(.level, .stack):is(.center):not(.level:is(.top, .bottom), .stack:is(.left, .right)) {
+	&:is(.center):not(.level:is(.top, .bottom), .stack:is(.left, .right)) {
 		align-items: center;
 	}
-
-:is(.level, .stack):is(.level.bottom, .stack.right) {
+	&:is(.level.bottom, .stack.right) {
 		align-items: end;
 	}
 
-:is(.level, .stack).level > .pin-top,
-	:is(.level, .stack).stack > .pin-left {
+	&.level > .pin-top,
+	&.stack > .pin-left {
 		align-self: start;
 	}
-
-:is(.level, .stack) > .pin-center {
+	& > .pin-center {
 		align-self: center;
 	}
-
-:is(.level, .stack) > .stretch {
+	& > .stretch {
 		align-self: stretch;
 	}
-
-:is(.level, .stack).level > .pin-bottom,
-	:is(.level, .stack).stack > .pin-right {
+	&.level > .pin-bottom,
+	&.stack > .pin-right {
 		align-self: end;
 	}
 
-:is(.level, .stack).gap-auto {
+	&.gap-auto {
 		justify-content: space-between;
 	}
 
-:is(.level, .stack).grow-all > *,
-	:is(.level, .stack) > .grow {
+	&.grow-all > *,
+	& > .grow {
 		flex-grow: 1;
 	}
+}

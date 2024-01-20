@@ -3,13 +3,14 @@
 }
 :is(.float-left, .float-right) {
 	position: relative;
-}
-:is(.float-left, .float-right).float-left {
+
+	&.float-left {
 		float: left;
 	}
-:is(.float-left, .float-right).float-right {
+	&.float-right {
 		float: right;
 	}
+}
 .no-margin {
 	margin: 0;
 }

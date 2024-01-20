@@ -1,43 +1,63 @@
 a {
 	color: var(--text1);
 	text-decoration: none;
-}
 
-	a:hover {
+	&:hover {
 		color: var(--text2);
 	}
+}
 blockquote {
 	height: 100%;
 	background-color: var(--surface1);
-}
-blockquote::before {
+
+	&::before {
 		font-family: monospace;
 		font-size: 96px;
 		content: '"';
 	}
+}
 .button {
 	background-color: var(--surface1);
 	color: var(--text1);
-}
-.button.brand {
+
+	&.brand {
 		background-color: var(--brand);
 		font-weight: 700;
 		color: var(--text2);
 	}
-details[open] > summary::before {
+}
+details {
+	&[open] > summary::before {
 		transform: rotateZ(90deg);
 	}
-details[open] > *:not(summary) {
+
+	&[open] > *:not(summary) {
 		animation: details-show 200ms;
 	}
-/* display: flex; */
-/* align-items: center; */
-details > summary > :is(h1, h2, h3, h4, h5, h6) {
+
+	& > summary {
+		/* display: flex; */
+		/* align-items: center; */
+
+		& > :is(h1, h2, h3, h4, h5, h6) {
 			display: inline-block;
 		}
+	}
+}
 @keyframes details-show {
 	from {
 		opacity: 0;
 		transform: var(--details-translate, translateY(-0.5em));
+	}
+}
+.panel {
+	border-radius: 5px;
+
+	&:not(.u-nopadding) {
+		padding: clamp(var(--padding-min, 1rem), 2.5vw, var(--padding-max, 2rem));
+	}
+
+	&:not(.u-overflow) {
+		overflow: hidden;
 	}
 }

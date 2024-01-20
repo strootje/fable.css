@@ -1,7 +1,6 @@
 import AutoPrefix from 'autoprefixer'
 import CssNano from 'cssnano'
 import ImportCss from 'postcss-import'
-import NestedCss from 'postcss-nested'
 import VarsCss from 'postcss-advanced-variables'
 
 declare const process: {
@@ -25,7 +24,6 @@ export default {
 				contentMaxWidth: '1140px',
 			},
 		}),
-		NestedCss({}),
 		ImportCss({}),
 		AutoPrefix({
 			overrideBrowserslist: ['defaults'],

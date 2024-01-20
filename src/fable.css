@@ -38,14 +38,14 @@
 }
 
 .fable {
-	&:not(.panecake-with-hero) {
+	&:not(.pancake-with-hero) {
 		grid-template-columns:
 			[content-start]
 			repeat(var(--columns, 12), 1fr)
 			[content-end];
 	}
 
-	&.panecake-with-hero {
+	&.pancake-with-hero {
 		grid-template-rows:
 			[header] var(--header-height, max-content)
 			[content] auto
