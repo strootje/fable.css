@@ -123,7 +123,7 @@ html {
 			grid-column: content;
 		}
 
-		& > .hero {
+		& .hero {
 			grid-column: fullbleed;
 
 			&.grid > * {
