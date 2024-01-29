@@ -1,7 +1,7 @@
 import AutoPrefix from 'autoprefixer'
 import CssNano from 'cssnano'
-import ImportCss from 'postcss-import'
-import VarsCss from 'postcss-advanced-variables'
+import CssImport from 'postcss-import'
+import CssVariables from 'postcss-advanced-variables'
 
 declare const process: {
 	env: { [_: string]: any }
@@ -17,14 +17,14 @@ const ifProduction = (...plugins: any[]) => {
 
 export default {
 	plugins: [
-		VarsCss({
+		CssVariables({
 			variables: {
-				fontScale: '1.2',
-				sizes: 'sm, md, lg, xl',
-				contentMaxWidth: '1140px',
-			},
+				sizes: '2xs, xs, sm, md, lg, xl, 2xl'
+			}
 		}),
-		ImportCss({}),
+		CssImport({
+			skipDuplicates: true,
+		}),
 		AutoPrefix({
 			overrideBrowserslist: ['defaults'],
 		}),

@@ -1,51 +1,108 @@
 :root {
-	--sm: calc(var(--md) / 2);
-	--md: calc(var(--base, 8px));
-	--lg: calc(var(--md) * 2);
-	--xl: calc(var(--md) * 3);
+	--2xs: calc(var(--pt) / 4);
+	--xs: calc(var(--pt) / 3);
+	--sm: calc(var(--pt) / 2);
+	--md: var(--base, 8px);
+	--lg: calc(var(--pt) * 2);
+	--xl: calc(var(--pt) * 3);
+	--2xl: calc(var(--pt) * 4);
 }
 
-:is(:is(.grid, .fable), :is(.level, .stack)) {
-	&:is(menu, ol, ul) {
-		list-style: none;
-		padding: unset;
-	}
+/* ===== Reset =============================== */
+/* =========================================== */
 
-	&:not(.no-gap) {
-		gap: var(--md);
-	}
-
-	@each $s in $sizes {
-		&.gap-$(s) {
-			gap: var(--$(s));
-		}
-	}
+html {
+	line-height: 1.6;
+	box-sizing: border-box;
+	font-weight: var(--font-weight-text, 300);
+	font-family: var(--font-family-text, sans-serif, system);
+	font-size: var(--font-size-text, clamp(2.4rem, -0.81vw + 2.72rem, 1.8rem));
 }
 
-:is(.grid, .fable) {
+:is(html, body) {
+	min-height: 100vh;
+}
+
+:is(*, *::before, *::after) {
+	line-height: inherit;
+	box-sizing: inherit;
+	font-size: inherit;
+}
+
+:is(body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol, blockquote) {
+	padding: unset;
+	margin: unset;
+}
+
+:is(img, picture, video, canvas, svg) {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+
+:is(input, button, textarea, select) {
+	font: inherit;
+}
+
+/* ===== Layout / Grid ======================= */
+/* =========================================== */
+
+.grid {
 	display: grid;
 
-	@for $i from 1 to 12 {
-		& > .span-$i {
-			grid-column: span $i;
-		}
-	}
-
-	& > .grid:not(.no-inherit) {
+	&:not(.no-inherit) > .grid {
 		grid-template-columns: subgrid;
-		gap: inherit;
-	}
-}
-
-.fable {
-	&:not(.pancake-with-hero) {
-		grid-template-columns:
-			[content-start]
-			repeat(var(--columns, 12), 1fr)
-			[content-end];
 	}
 
-	&.pancake-with-hero {
+	&.top {
+		align-items: start;
+	}
+
+	&:not(.top, .bottom).center {
+		align-items: center;
+	}
+
+	&.bottom {
+		align-items: end;
+	}
+
+	&.left {
+		justify-items: start;
+	}
+
+	&:not(.left, .right).center {
+		justify-items: center;
+	}
+
+	&.right {
+		justify-items: end;
+	}
+
+	& > .pin-top {
+		align-self: start;
+	}
+
+	& > .pin-center:not(.pin-top, .pin-bottom) {
+		align-self: center;
+	}
+
+	& > .pin-bottom {
+		align-self: end;
+	}
+
+	& > .pin-left {
+		justify-self: start;
+	}
+
+	& > .pin-center:not(.pin-left, .pin-right) {
+		justify-self: center;
+	}
+
+	& > .pin-right {
+		justify-self: end;
+	}
+
+	&:where(body).holy-grail {
 		grid-template-rows:
 			[header] var(--header-height, max-content)
 			[content] auto
@@ -53,23 +110,21 @@
 
 		grid-template-columns:
 			[fullbleed-start]
-			max(var(--md), ((100vw - var(--content-width, $contentMaxWidth)) / 2))
+			max(var(--md), ((100vw - var(--content-width, 1140px)) / 2))
 			[content-start]
 			repeat(var(--columns, 12), 1fr)
 			[content-end]
-			max(var(--md), ((100vw - var(--content-width, $contentMaxWidth)) / 2))
+			max(var(--md), ((100vw - var(--content-width, 1140px)) / 2))
 			[fullbleed-end];
 
-		& > :is(header, :is(main, article), footer) {
-			grid-template-columns: subgrid;
+		& > :not(.hero) {
 			grid-column: content;
-			display: grid;
 		}
 
-		& .hero {
+		& > .hero {
 			grid-column: fullbleed;
 
-			& > :not(.hero) {
+			&.grid > * {
 				grid-column: content;
 			}
 		}
@@ -77,16 +132,21 @@
 		& > header {
 			grid-row: header;
 		}
-		& > :is(main, article) {
+
+		& > main {
 			grid-row: content;
 		}
+
 		& > footer {
 			grid-row: footer;
 		}
 	}
 }
 
-:is(.level, .stack) {
+/* ===== Layout / Stack + Level ============== */
+/* =========================================== */
+
+:where(.stack, .level) {
 	display: flex;
 
 	&.stack:not(.reverse) {
@@ -140,9 +200,126 @@
 	&.gap-auto {
 		justify-content: space-between;
 	}
+}
 
-	&.grow-all > *,
-	& > .grow {
-		flex-grow: 1;
+/* ===== Attributes / Float ================== */
+/* =========================================== */
+
+:is(.float-left, .float-right) {
+	position: relative;
+
+	&.float-left {
+		float: left;
 	}
+	&.float-right {
+		float: right;
+	}
+}
+
+/* ===== Attributes / Margin ================= */
+/* =========================================== */
+
+@each $size in $sizes {
+	:is(.mar-$size, .mar-hor-$size, .mar-left-$size) {
+		margin-left: var(--$size);
+	}
+
+	:is(.mar-$size, .mar-hor-$size, .mar-right-$size) {
+		margin-right: var(--$size);
+	}
+
+	:is(.mar-$size, .mar-ver-$size, .mar-top-$size) {
+		margin-top: var(--$size);
+	}
+
+	:is(.mar-$size, .mar-ver-$size, .mar-bottom-$size) {
+		margin-bottom: var(--$size);
+	}
+}
+
+/* ===== Attributes / Padding ================ */
+/* =========================================== */
+
+@each $size in $sizes {
+	:is(.pad-$size, .pad-hor-$size, .pad-left-$size) {
+		padding-left: var(--$size);
+	}
+
+	:is(.pad-$size, .pad-hor-$size, .pad-right-$size) {
+		padding-right: var(--$size);
+	}
+
+	:is(.pad-$size, .pad-ver-$size, .pad-top-$size) {
+		padding-top: var(--$size);
+	}
+
+	:is(.pad-$size, .pad-ver-$size, .pad-bottom-$size) {
+		padding-bottom: var(--$size);
+	}
+}
+
+/* ===== Attributes / Radius ================= */
+/* =========================================== */
+
+@each $size in $sizes {
+	:is(.rad-$size, .rad-left-$size, .rad-right-$size, .rad-top-$size, .rad-bottom-$size),
+	:is(.rad-top-left-$size, .rad-top-right-$size, .rad-bottom-left-$size, .rad-bottom-right-$size) {
+		overflow: hidden;
+	}
+
+	:is(.rad-$size, .rad-left-$size, .rad-top-$size, .rad-top-left-$size) {
+		border-top-left-radius: var(--$size);
+	}
+	:is(.rad-$size, .rad-right-$size, .rad-top-$size, .rad-top-right-$size) {
+		border-top-right-radius: var(--$size);
+	}
+	:is(.rad-$size, .rad-left-$size, .rad-bottom-$size, .rad-bottom-left-$size) {
+		border-bottom-left-radius: var(--$size);
+	}
+	:is(.rad-$size, .rad-right-$size, .rad-bottom-$size, .rad-bottom-right-$size) {
+		border-bottom-right-radius: var(--$size);
+	}
+}
+
+/* ===== Attributes / Text / Align =========== */
+/* =========================================== */
+
+:is(.text-left, .text-left-all > *) {
+	text-align: left;
+}
+
+:is(.text-center, .text-center-all > *) {
+	text-align: center;
+}
+
+:is(.text-right, .text-right-all > *) {
+	text-align: right;
+}
+
+/* ===== Attributes / Text / Headings ======== */
+/* =========================================== */
+
+:is(h1, h2, h3, h4, h5, h6),
+:is(.is-1, .is-2, .is-3, .is-4, .is-5, .is-6) {
+	font-weight: var(--heading-font-weight, 700);
+	font: var(--heading-font-family, serif, system);
+}
+
+:is(h1:not(.is-2, .is-3, .is-4, .is-5, .is-6), .is-1) {
+	font-size: var(--font-size-h1, clamp(5.97rem, -0.65vw + 6.23rem, 5.49rem));
+}
+:is(h2:not(.is-1, .is-3, .is-4, .is-5, .is-6), .is-2) {
+	font-size: var(--font-size-h2, clamp(4.98rem, -0.79vw + 5.29rem, 4.39rem));
+}
+:is(h3:not(.is-1, .is-2, .is-4, .is-5, .is-6), .is-3) {
+	font-size: var(--font-size-h3, clamp(4.15rem, -0.85vw + 4.49rem, 3.52rem));
+}
+:is(h4:not(.is-1, .is-2, .is-3, .is-5, .is-6), .is-4) {
+	font-size: var(--font-size-h4, clamp(3.46rem, -0.87vw + 3.8rem, 2.81rem));
+}
+:is(h5:not(.is-1, .is-2, .is-3, .is-4, .is-6), .is-5) {
+	font-size: var(--font-size-h5, clamp(2.88rem, -0.85vw + 3.22rem, 2.25rem));
+}
+:is(h6:not(.is-1, .is-2, .is-3, .is-4, .is-5), .is-6) {
+	font-size: var(--font-size-h6, clamp(2rem, -0.76vw + 2.3rem, 1.44rem));
 }

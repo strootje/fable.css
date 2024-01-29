@@ -1,8 +1,17 @@
 {
-	"tabWidth": 3,
-	"useTabs": true,
-	"trailingComma": "all",
 	"semi": false,
+	"useTabs": true,
 	"singleQuote": true,
-	"printWidth": 160
+	"trailingComma": "all",
+	"printWidth": 160,
+
+	"plugins": ["prettier-plugin-go-template"],
+	"overrides": [
+		{
+			"files": "*.html",
+			"options": {
+				"parser": "go-template"
+			}
+		}
+	]
 }
