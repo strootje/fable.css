@@ -144,6 +144,10 @@ html {
 	}
 }
 
+:where(.grid, .stack, .level):where(ol, ul, menu) {
+	list-style: none;
+}
+
 /* ===== Layout / Stack + Level ============== */
 /* =========================================== */
 
