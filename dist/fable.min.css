@@ -1,11 +1,11 @@
 :root {
-	--2xs: calc(var(--pt) / 4);
-	--xs: calc(var(--pt) / 3);
-	--sm: calc(var(--pt) / 2);
+	--2xs: calc(var(--md) / 4);
+	--xs: calc(var(--md) / 3);
+	--sm: calc(var(--md) / 2);
 	--md: var(--base, 8px);
-	--lg: calc(var(--pt) * 2);
-	--xl: calc(var(--pt) * 3);
-	--2xl: calc(var(--pt) * 4);
+	--lg: calc(var(--md) * 2);
+	--xl: calc(var(--md) * 3);
+	--2xl: calc(var(--md) * 4);
 }
 
 /* ===== Reset =============================== */
