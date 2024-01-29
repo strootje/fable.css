@@ -50,7 +50,9 @@ html {
 /* =========================================== */
 
 .grid {
-	display: grid;
+	&:where(:not(dialog), dialog[open]) {
+		display: grid;
+	}
 
 	&:not(.no-inherit) > .grid {
 		grid-template-columns: subgrid;
@@ -145,7 +147,7 @@ html {
 	}
 }
 
-:where(.grid, .stack, .level):where(ol, ul, menu) {
+:where(ol, ul, menu):where(.grid, .stack, .level) {
 	list-style: none;
 }
 
@@ -154,7 +156,9 @@ html {
 /* =========================================== */
 
 :where(.stack, .level) {
-	display: flex;
+	&:where(:not(dialog), dialog[open]) {
+		display: flex;
+	}
 
 	&.stack:not(.reverse) {
 		flex-direction: column;
