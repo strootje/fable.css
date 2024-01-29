@@ -209,6 +209,10 @@ html {
 	&.gap-auto {
 		justify-content: space-between;
 	}
+
+	& > .grow {
+		flex-grow: 1;
+	}
 }
 
 /* ===== Attributes / Float ================== */
