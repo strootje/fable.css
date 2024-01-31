@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../dist/fable-all.min.css" />
+		<title>Document</title>
+	</head>
+
+	<body class="grid center">
+		<div class="stack">
+			<form class="stack text1" id="theme-switcher">
+				<div class="level ">
+					<select class="grow margin-xl padding-xl radius-md surface1 border shadow" name="color">
+						<option value="mustard">mustard</option>
+						<option value="chive">chive</option>
+						<option value="aurora-pink">aurora-pink</option>
+						<option value="faded-denim">faded-denim</option>
+						<option value="biscay-green">biscay-green</option>
+						<option value="orange-peel">orange-peel</option>
+						<option value="grape-compote">grape-compote</option>
+						<option value="sunlight ">sunlight</option>
+						<option value="hotpink ">hotpink</option>
+					</select>
+				</div>
+				
+				<div class="level">
+					<label class="level margin-xl padding-xl radius-md surface2 border shadow">
+						<input type="radio" name="theme" value="light" />
+						<span>Light</span>
+					</label>
+
+					<label class="level margin-xl padding-xl radius-md surface3 border shadow">
+						<input type="radio" name="theme" value="dark" />
+						<span>Dark</span>
+					</label>
+	
+					<label class="level margin-xl padding-xl radius-md surface4 border shadow">
+						<input type="radio" name="theme" value="dim" />
+						<span>Dim</span>
+					</label>
+				</div>
+	
+				<p class="brand margin-xl padding-xl radius-md border shadow">
+					<span class="text1">Brand 1</span>
+					<span class="text2">Brand 2</span>
+				</p>
+			</form>
+		</div>
+
+		<script>
+			document.getElementById('theme-switcher').addEventListener('input', e => {
+				const doc = document.firstElementChild;
+				if (e.target.name == "color") {
+					doc.className = "";
+					doc.classList.add(e.target.value);
+				} else {
+					doc.setAttribute('color-scheme', e.target.value);
+				}
+			});
+		</script>
+	</body>
+</html>

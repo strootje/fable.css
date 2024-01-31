@@ -1,0 +1,36 @@
+/* ===== Reset =============================== */
+/* =========================================== */
+
+html {
+	line-height: 1.6;
+	box-sizing: border-box;
+	font-weight: var(--font-weight-text, 300);
+	font-family: var(--font-family-text, sans-serif, system);
+	font-size: var(--font-size-text, 62.5%);
+}
+
+
+:is(html, body) {
+	min-height: 100vh;
+}
+
+:is(*, *::before, *::after) {
+	line-height: inherit;
+	box-sizing: inherit;
+	font-size: clamp(2.4rem, -0.81vw + 2.72rem, 1.8rem);
+}
+
+:is(body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol, blockquote) {
+	padding: unset;
+	margin: unset;
+}
+
+:is(img, picture, video, canvas, svg) {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+
+:is(input, button, textarea, select) {
+	font: inherit;
+}
