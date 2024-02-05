@@ -12,6 +12,33 @@
 	list-style: none;
 }
 
+:where(.grid, .stack, .level) {
+	&:not(.no-gap) {
+		gap: var(--md);
+	}
+		&.gap-2xs {
+			gap: var(--2xs);
+		}
+		&.gap-xs {
+			gap: var(--xs);
+		}
+		&.gap-sm {
+			gap: var(--sm);
+		}
+		&.gap-md {
+			gap: var(--md);
+		}
+		&.gap-lg {
+			gap: var(--lg);
+		}
+		&.gap-xl {
+			gap: var(--xl);
+		}
+		&.gap-2xl {
+			gap: var(--2xl);
+		}
+}
+
 /* ===== Layout / Grid ======================= */
 
 /* =========================================== */

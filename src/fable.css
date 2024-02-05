@@ -12,6 +12,18 @@
 	list-style: none;
 }
 
+:where(.grid, .stack, .level) {
+	&:not(.no-gap) {
+		gap: var(--md);
+	}
+
+	@each $size in $sizes {
+		&.gap-$size {
+			gap: var(--$size);
+		}
+	}
+}
+
 /* ===== Layout / Grid ======================= */
 /* =========================================== */
 
