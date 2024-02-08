@@ -604,29 +604,69 @@ body.grid.holy-grail {
 	list-style: none;
 }
 :where(.grid, .stack, .level) {
-	&:not(.no-gap) {
-		gap: var(--md);
+	&:not(.no-gap, .no-horizontal-gap) {
+		-moz-column-gap: var(--md);
+		     column-gap: var(--md);
 	}
-		&.gap-2xs {
-			gap: var(--2xs);
+
+	&:not(.no-gap, .no-vertical) {
+		row-gap: var(--md);
+	}
+		&:where(.gap-2xs, .gap-horizontal-2xs) {
+			-moz-column-gap: var(--2xs);
+			     column-gap: var(--2xs);
 		}
-		&.gap-xs {
-			gap: var(--xs);
+
+		&:where(.gap-2xs, .gap-vertical-2xs) {
+			row-gap: var(--2xs);
 		}
-		&.gap-sm {
-			gap: var(--sm);
+		&:where(.gap-xs, .gap-horizontal-xs) {
+			-moz-column-gap: var(--xs);
+			     column-gap: var(--xs);
 		}
-		&.gap-md {
-			gap: var(--md);
+
+		&:where(.gap-xs, .gap-vertical-xs) {
+			row-gap: var(--xs);
 		}
-		&.gap-lg {
-			gap: var(--lg);
+		&:where(.gap-sm, .gap-horizontal-sm) {
+			-moz-column-gap: var(--sm);
+			     column-gap: var(--sm);
 		}
-		&.gap-xl {
-			gap: var(--xl);
+
+		&:where(.gap-sm, .gap-vertical-sm) {
+			row-gap: var(--sm);
 		}
-		&.gap-2xl {
-			gap: var(--2xl);
+		&:where(.gap-md, .gap-horizontal-md) {
+			-moz-column-gap: var(--md);
+			     column-gap: var(--md);
+		}
+
+		&:where(.gap-md, .gap-vertical-md) {
+			row-gap: var(--md);
+		}
+		&:where(.gap-lg, .gap-horizontal-lg) {
+			-moz-column-gap: var(--lg);
+			     column-gap: var(--lg);
+		}
+
+		&:where(.gap-lg, .gap-vertical-lg) {
+			row-gap: var(--lg);
+		}
+		&:where(.gap-xl, .gap-horizontal-xl) {
+			-moz-column-gap: var(--xl);
+			     column-gap: var(--xl);
+		}
+
+		&:where(.gap-xl, .gap-vertical-xl) {
+			row-gap: var(--xl);
+		}
+		&:where(.gap-2xl, .gap-horizontal-2xl) {
+			-moz-column-gap: var(--2xl);
+			     column-gap: var(--2xl);
+		}
+
+		&:where(.gap-2xl, .gap-vertical-2xl) {
+			row-gap: var(--2xl);
 		}
 }
 /* ===== Layout / Grid ======================= */

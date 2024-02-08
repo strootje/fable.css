@@ -13,34 +13,26 @@
 }
 
 :where(.grid, .stack, .level) {
-	&:not(.no-gap) {
-		gap: var(--md);
+	&:not(.no-gap, .no-horizontal-gap) {
+		column-gap: var(--md);
 	}
-		&.gap-2xs {
-			gap: var(--2xs);
+
+	&:not(.no-gap, .no-vertical) {
+		row-gap: var(--md);
+	}
+
+	@each $size in $sizes {
+		&:where(.gap-$size, .gap-horizontal-$size) {
+			column-gap: var(--$size);
 		}
-		&.gap-xs {
-			gap: var(--xs);
+
+		&:where(.gap-$size, .gap-vertical-$size) {
+			row-gap: var(--$size);
 		}
-		&.gap-sm {
-			gap: var(--sm);
-		}
-		&.gap-md {
-			gap: var(--md);
-		}
-		&.gap-lg {
-			gap: var(--lg);
-		}
-		&.gap-xl {
-			gap: var(--xl);
-		}
-		&.gap-2xl {
-			gap: var(--2xl);
-		}
+	}
 }
 
 /* ===== Layout / Grid ======================= */
-
 /* =========================================== */
 
 .grid {
@@ -94,7 +86,6 @@
 }
 
 /* ===== Layout / Stack + Level ============== */
-
 /* =========================================== */
 
 :where(.stack, .level) {
