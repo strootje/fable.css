@@ -554,6 +554,43 @@ body {
 :where(h6:not(.is-1, .is-2, .is-3, .is-4, .is-5), .is-6) {
 	font-size: var(--font-size-h6, clamp(2rem, -0.76vw + 2.3rem, 1.44rem));
 }
+body.grid.holy-grail {
+   grid-template-rows:
+      [header] var(--header-height, max-content)
+      [content] auto
+      [footer] var(--footer-height, max-content);
+
+   grid-template-columns:
+      [fullbleed-start]
+      max(var(--md), ((100vw - var(--content-width, 1140px)) / 2))
+      [content-start]
+      repeat(var(--columns, 12), 1fr)
+      [content-end]
+      max(var(--md), ((100vw - var(--content-width, 1140px)) / 2))
+      [fullbleed-end];
+
+   & > :not(.hero) {
+      grid-column: content;
+   }
+
+   & .hero {
+      grid-column: fullbleed;
+
+      &.grid > :not(.hero) {
+         grid-column: content;
+      }
+   }
+
+   & > header {
+      grid-row: header;
+   }
+   & > main {
+      grid-row: content;
+   }
+   & > footer {
+      grid-row: footer;
+   }
+}
 :root {
 	--2xs: calc(var(--md) / 4);
 	--xs: calc(var(--md) / 3);
@@ -641,44 +678,6 @@ body {
 	}
 	& > .pin-right {
 		justify-self: end;
-	}
-
-	&:where(body).holy-grail {
-		grid-template-rows:
-			[header] var(--header-height, max-content)
-			[content] auto
-			[footer] var(--footer-height, max-content);
-
-		grid-template-columns:
-			[fullbleed-start]
-			max(var(--md), ((100vw - var(--content-width, 1140px)) / 2))
-			[content-start]
-			repeat(var(--columns, 12), 1fr)
-			[content-end]
-			max(var(--md), ((100vw - var(--content-width, 1140px)) / 2))
-			[fullbleed-end];
-
-		& > :not(.hero) {
-			grid-column: content;
-		}
-
-		& .hero {
-			grid-column: fullbleed;
-
-			&.grid > * {
-				grid-column: content;
-			}
-		}
-
-		& > header {
-			grid-row: header;
-		}
-		& > main {
-			grid-row: content;
-		}
-		& > footer {
-			grid-row: footer;
-		}
 	}
 }
 /* ===== Layout / Stack + Level ============== */
