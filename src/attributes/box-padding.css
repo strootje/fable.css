@@ -2,19 +2,19 @@
 /* =========================================== */
 
 @each $size in $sizes {
-	:is(.padding-$size, .padding-hor-$size, .padding-left-$size) {
+	:where(.padding-$size, .padding-hor-$size, .padding-left-$size) {
 		padding-left: var(--$size);
 	}
 
-	:is(.padding-$size, .padding-hor-$size, .padding-right-$size) {
+	:where(.padding-$size, .padding-hor-$size, .padding-right-$size) {
 		padding-right: var(--$size);
 	}
 
-	:is(.padding-$size, .padding-ver-$size, .padding-top-$size) {
+	:where(.padding-$size, .padding-ver-$size, .padding-top-$size) {
 		padding-top: var(--$size);
 	}
 
-	:is(.padding-$size, .padding-ver-$size, .padding-bottom-$size) {
+	:where(.padding-$size, .padding-ver-$size, .padding-bottom-$size) {
 		padding-bottom: var(--$size);
 	}
 }

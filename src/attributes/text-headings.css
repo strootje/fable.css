@@ -1,27 +1,27 @@
 /* ===== Attributes / Text / Headings ======== */
 /* =========================================== */
 
-:is(h1, h2, h3, h4, h5, h6),
-:is(.is-1, .is-2, .is-3, .is-4, .is-5, .is-6) {
-	font-weight: var(--heading-font-weight, 700);
-	font: var(--heading-font-family, serif, system);
+:where(h1, h2, h3, h4, h5, h6),
+:where(.is-1, .is-2, .is-3, .is-4, .is-5, .is-6) {
+	font-weight: var(--font-weight-heading, 700);
+	font: var(--font-family-heading, serif, system);
 }
 
-:is(h1:not(.is-2, .is-3, .is-4, .is-5, .is-6), .is-1) {
+:where(h1:not(.is-2, .is-3, .is-4, .is-5, .is-6), .is-1) {
 	font-size: var(--font-size-h1, clamp(5.97rem, -0.65vw + 6.23rem, 5.49rem));
 }
-:is(h2:not(.is-1, .is-3, .is-4, .is-5, .is-6), .is-2) {
+:where(h2:not(.is-1, .is-3, .is-4, .is-5, .is-6), .is-2) {
 	font-size: var(--font-size-h2, clamp(4.98rem, -0.79vw + 5.29rem, 4.39rem));
 }
-:is(h3:not(.is-1, .is-2, .is-4, .is-5, .is-6), .is-3) {
+:where(h3:not(.is-1, .is-2, .is-4, .is-5, .is-6), .is-3) {
 	font-size: var(--font-size-h3, clamp(4.15rem, -0.85vw + 4.49rem, 3.52rem));
 }
-:is(h4:not(.is-1, .is-2, .is-3, .is-5, .is-6), .is-4) {
+:where(h4:not(.is-1, .is-2, .is-3, .is-5, .is-6), .is-4) {
 	font-size: var(--font-size-h4, clamp(3.46rem, -0.87vw + 3.8rem, 2.81rem));
 }
-:is(h5:not(.is-1, .is-2, .is-3, .is-4, .is-6), .is-5) {
+:where(h5:not(.is-1, .is-2, .is-3, .is-4, .is-6), .is-5) {
 	font-size: var(--font-size-h5, clamp(2.88rem, -0.85vw + 3.22rem, 2.25rem));
 }
-:is(h6:not(.is-1, .is-2, .is-3, .is-4, .is-5), .is-6) {
+:where(h6:not(.is-1, .is-2, .is-3, .is-4, .is-5), .is-6) {
 	font-size: var(--font-size-h6, clamp(2rem, -0.76vw + 2.3rem, 1.44rem));
 }

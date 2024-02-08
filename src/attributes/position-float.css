@@ -1,7 +1,7 @@
 /* ===== Attributes / Float ================== */
 /* =========================================== */
 
-:is(.float-left, .float-right) {
+:where(.float-left, .float-right) {
 	position: relative;
 
 	&.float-left {

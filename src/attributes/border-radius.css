@@ -2,21 +2,21 @@
 /* =========================================== */
 
 @each $size in $sizes {
-	:is(.radius-$size, .radius-left-$size, .radius-right-$size, .radius-top-$size, .radius-bottom-$size),
-	:is(.radius-top-left-$size, .radius-top-right-$size, .radius-bottom-left-$size, .radius-bottom-right-$size) {
+	:where(.radius-$size, .radius-left-$size, .radius-right-$size, .radius-top-$size, .radius-bottom-$size),
+	:where(.radius-top-left-$size, .radius-top-right-$size, .radius-bottom-left-$size, .radius-bottom-right-$size) {
 		overflow: hidden;
 	}
 
-	:is(.radius-$size, .radius-left-$size, .radius-top-$size, .radius-top-left-$size) {
+	:where(.radius-$size, .radius-left-$size, .radius-top-$size, .radius-top-left-$size) {
 		border-top-left-radius: var(--$size);
 	}
-	:is(.radius-$size, .radius-right-$size, .radius-top-$size, .radius-top-right-$size) {
+	:where(.radius-$size, .radius-right-$size, .radius-top-$size, .radius-top-right-$size) {
 		border-top-right-radius: var(--$size);
 	}
-	:is(.radius-$size, .radius-left-$size, .radius-bottom-$size, .radius-bottom-left-$size) {
+	:where(.radius-$size, .radius-left-$size, .radius-bottom-$size, .radius-bottom-left-$size) {
 		border-bottom-left-radius: var(--$size);
 	}
-	:is(.radius-$size, .radius-right-$size, .radius-bottom-$size, .radius-bottom-right-$size) {
+	:where(.radius-$size, .radius-right-$size, .radius-bottom-$size, .radius-bottom-right-$size) {
 		border-bottom-right-radius: var(--$size);
 	}
 }
