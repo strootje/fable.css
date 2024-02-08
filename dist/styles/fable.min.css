@@ -13,12 +13,12 @@
 }
 
 :where(.grid, .stack, .level) {
-	&:not(.no-gap, .no-vertical-gap) {
+	&:not(.no-gap, .no-horizontal-gap) {
 		-moz-column-gap: var(--md);
 		     column-gap: var(--md);
 	}
 
-	&:not(.no-gap, .no-horizontal-gap) {
+	&:not(.no-gap, .no-vertical-gap) {
 		row-gap: var(--md);
 	}
 		&:where(.gap-2xs, .gap-horizontal-2xs) {
