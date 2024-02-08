@@ -7,13 +7,16 @@ html {
 	font-family: var(--font-family-text, sans-serif, system);
 	font-size: var(--font-size-text, 62.5%);
 }
+body {
+	font-size: clamp(2.4rem, -0.81vw + 2.72rem, 1.8rem);
+}
 :where(html, body) {
 	min-height: 100vh;
 }
 :where(*, *::before, *::after) {
 	line-height: inherit;
 	box-sizing: inherit;
-	font-size: clamp(2.4rem, -0.81vw + 2.72rem, 1.8rem);
+	font-size: inherit;
 }
 :where(body, h1, h2, h3, h4, h5, h6, p, figure, ul, ol, blockquote) {
 	padding: unset;
