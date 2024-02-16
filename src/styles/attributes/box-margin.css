@@ -2,19 +2,19 @@
 /* =========================================== */
 
 @each $size in $sizes {
-	:where(.margin-$size, .margin-hor-$size, .margin-left-$size) {
+	:where(.margin-$size, .margin-horizontal-$size, .margin-left-$size) {
 		margin-left: var(--$size);
 	}
 
-	:where(.margin-$size, .margin-hor-$size, .margin-right-$size) {
+	:where(.margin-$size, .margin-horizontal-$size, .margin-right-$size) {
 		margin-right: var(--$size);
 	}
 
-	:where(.margin-$size, .margin-ver-$size, .margin-top-$size) {
+	:where(.margin-$size, .margin-vertical-$size, .margin-top-$size) {
 		margin-top: var(--$size);
 	}
 
-	:where(.margin-$size, .margin-ver-$size, .margin-bottom-$size) {
+	:where(.margin-$size, .margin-vertical-$size, .margin-bottom-$size) {
 		margin-bottom: var(--$size);
 	}
 }
