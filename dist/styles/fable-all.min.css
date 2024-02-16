@@ -681,13 +681,13 @@ body.grid.holy-grail {
 	}
 
 	&.top {
-		align-items: start;
+		align-content: start;
 	}
 	&:not(.top, .bottom).center {
-		align-items: center;
+		align-content: center;
 	}
 	&.bottom {
-		align-items: end;
+		align-content: end;
 	}
 
 	&.left {
